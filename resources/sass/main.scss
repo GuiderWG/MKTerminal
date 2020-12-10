@@ -1,0 +1,22 @@
+/* кастомные стили */
+.safe-zone {
+    padding: 15px 15px 0;
+}
+.test {
+    &::before {
+        display: block;
+        content: 'Hello world css!';
+    }
+    .kk {
+        color: #fff;
+        border-radius: 50%;
+        transform: scaleX(2);
+        user-select: none;
+    }
+}
+.a {
+    color: #fff;
+    background: url('../img/ru.png');
+    width: 400px;
+    height: 300px;
+}
