@@ -1,6 +1,4 @@
-/*
- * Сборка проекта: зависимости, начальная загрузка
- */
+/* JQuery */
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
@@ -8,11 +6,26 @@ window.$ = window.jQuery = $;
 import 'popper.js';
 import 'bootstrap';
 
-// Fancybox 3
-require('@fancyapps/fancybox');
-
 // Slick slider
 import 'slick-carousel';
 
-// Глобальный код проекта: фреймворк, другой минифицируемый код.
-console.log('ASMFM project: application has been started.');
+/* Animation with JS */
+import gsap from "gsap";
+window.gsap = gsap;
+
+/* Parallax JS */
+import Parallax from 'parallax-js'
+window.Parallax = Parallax;
+
+/* AnimeJS */
+import anime from 'animejs/lib/anime.es.js'
+window.anime = anime;
+
+// Fancybox 3
+require('@fancyapps/fancybox');
+
+/* Fullpage */
+require('fullpage.js');
+
+/* Mobile menu */
+require('hc-offcanvas-nav');

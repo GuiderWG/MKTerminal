@@ -1,0 +1,165 @@
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu-btn {
+  border: 2px solid $primary;
+  border-radius: 8px;
+  background: transparent;
+  position: relative;
+  top: 0;
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: 0;
+  &__span, &__span::before, &__span::after {
+    width: 25px !important;
+    display: block;
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%);
+    height: 2px !important;
+    background: $primary !important;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    margin-left: 0;
+  }
+  &__span {
+    transform: translate(-50%) !important;
+  }
+  &__span::before {
+    top: -8px !important;
+    margin-left: 0;
+  }
+  &__span::after {
+    bottom: -8px !important;
+    margin-left: 0;
+  }
+  &.toggle-open &__span {
+    transform: translate(-50%) rotate(133deg) !important;
+  }
+  &.toggle-open &__span::before {
+    top: -10px !important;
+    left: 0 !important;
+    transform: translate3d(0, 9px, 0);
+  }
+  &.toggle-open &__span::after {
+    top: 10px !important;
+    left: 0 !important;
+  }
+}
+
+
+
+.hc-offcanvas-nav {
+  font-family: "Raleway", sans-serif !important;
+  & .nav-close .logo__img_mobile {
+    width: 150px;
+  }
+  & .nav-close-button span::before, & .nav-close-button span::after {
+    width: 10px;
+    height: 10px;
+    margin-top: -8px;
+  }
+  & .nav-close-button span::before {
+    margin-left: -12px;
+  }
+  & .nav-content > .nav-close:first-child a, & .nav-title + .nav-close a.has-label, & li.nav-close a, & .nav-back a {
+    background: $darkBlue;
+    border-top: 1px solid $darkBlue;
+    border-bottom: 1px solid $darkBlue;
+  }
+  & .mobile-menu__item .mobile-menu__link {
+    color: $white;
+    font-weight: 400;
+    padding: 17px 15px;
+    font-size: 20px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    opacity: .9;
+    border-bottom: 1px solid $darkBlue;
+  }
+  & li.nav-close span::before, & li.nav-close span::after {
+    width: 9px !important;
+    height: 9px !important;
+  }
+  & .nav-next span::before, & li.nav-back span::before {
+    width: 10px;
+    height: 10px;
+  }
+  & li.nav-close span, & li.nav-parent .nav-next, & li.nav-back span {
+    width: 66px !important;
+    border-left: 1px solid $darkBlue;
+  }
+
+  & .nav-content > h2 {
+    font-size: 22px !important;
+    padding: 15px 17px !important;
+    color: #fff !important;
+    background: $deepDark !important;
+    margin-bottom: 0 !important;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+    letter-spacing: .06em;
+  }
+  & li.nav-parent .nav-item:not(:last-child) {
+    margin-right: 0px !important;
+  }
+  & li.nav-close a {
+    text-align: center;
+    padding: 7px 17px;
+    background: $white !important;
+    border-top: 1px solid transparent !important;
+  }
+  & li.nav-back a {
+    background: transparent !important;
+    color: $black;
+  }
+  & .nav-container, & .nav-content {
+    background: $blue !important;
+  }
+  & .nav-wrapper, & ul {
+    background: transparent !important;
+  }
+  & .nav-item, & a {
+    padding: 0;
+    border-bottom: none;
+  }
+  &:not(.touch-device) a:hover {
+    background: $darkBlue !important;
+  }
+  & a[href]:not([href="#"]) > span.nav-next {
+    border-left: 1px solid #2b2b2b;
+  }
+  & li.nav-back a:hover, & li.nav-close a:hover {
+    background: none;
+  }
+  & .nav-next span::before, & li.nav-back span::before {
+    opacity: .9;
+    border-top: 2px solid $white;
+    border-left: 2px solid $white;
+  }
+  & .nav-close .nav-item-wrapper a::before {
+    content: "×";
+    color: $black;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -1px;
+    position: absolute;
+    z-index: 9999;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.mobile-menu__item_active a {
+  background: #31679e !important;
+}
+
+.hc-offcanvas-nav:not(.touch-device) .quick-contacts__link:hover {
+  background: none !important;
+}

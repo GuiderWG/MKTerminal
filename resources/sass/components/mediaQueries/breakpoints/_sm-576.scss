@@ -1,0 +1,69 @@
+@media (max-width: 575.98px)  {
+  h2 {
+    font-size: 2.8rem;
+  }
+  .title-stroke {
+    -webkit-text-stroke: 0px rgba(255, 255, 255, 1);
+    -webkit-text-fill-color: inherit;
+    @include whiteOpacity(.9)
+  }
+  .logo {
+    max-width: 150px;
+    display: block;
+    & svg {
+      max-width: 100%;
+    }
+  }
+
+  .custom-inf .quick-contacts__link {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: .02em;
+  }
+
+  .custom-inf .quick-contacts__link:first-child {
+    font-size: 1.5rem;
+    letter-spacing: .04em;
+  }
+
+  .main-slider {
+    margin-bottom: 0;
+    &__title {
+      font-size: 36px;
+      line-height: 42px;
+      letter-spacing: .05em;
+      -webkit-text-stroke: 0px rgba(255, 255, 255, 1);
+      -webkit-text-fill-color: inherit;
+      margin-bottom: 20px;
+      @include whiteOpacity(.9)
+    }
+    &__subtitle {
+      margin-bottom: 20px;
+      line-height: 22px;
+      max-width: 280px;
+    }
+    &__item_slide_1 &__active-picture {
+      max-width: 280px;
+    }
+    &__item_slide_2 &__active-picture {
+      max-width: 260px;
+    }
+    &__dots {
+      left: 40px;
+    }
+    &__active-picture {
+      margin-top: 30px;
+      opacity: .9;
+    }
+  }
+
+  .blare-advantage {
+    &__text {
+      margin-bottom: 15px;
+    }
+    &:hover &__text {
+      margin-bottom: 15px;
+    }
+  }
+}

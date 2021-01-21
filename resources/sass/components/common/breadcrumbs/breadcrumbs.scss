@@ -1,0 +1,27 @@
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    padding-left: 0;
+    &__item {
+        font-size: 18px;
+        line-height: 23px;
+        text-transform: uppercase;
+        //color: $gray;
+    }
+    &__item+&__item::before {
+        display: inline-block;
+        padding-right: 7px;
+        //color: $gray;
+        content: "—";
+    }
+    &__link {
+        font-size: 18px;
+        line-height: 23px;
+        text-transform: uppercase;
+        //color: $gray;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+}

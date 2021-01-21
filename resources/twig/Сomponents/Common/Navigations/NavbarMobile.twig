@@ -1,0 +1,35 @@
+<nav id="mobile-nav" class="mobile-menu">
+    <ul>
+        <div class="nav-content__custom custom-inf" data-nav-custom-content>
+            <div class="custom-inf__search">
+                {% include '../Search/SearchDefault.twig' %}
+            </div>
+        </div>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link transition">О компании</a></li>
+        <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">Услуги</a>
+            <ul>
+                <li class="mobile-menu__item">
+                    <a href="#" class="mobile-menu__link">Hosting</a>
+                    <ul>
+                        <li class="mobile-menu__item"><a href="/" class="mobile-menu__link">Private Server</a></li>
+                        <li class="mobile-menu__item"><a href="/" class="mobile-menu__link">Managed Hosting</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Domains</a></li>
+                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Websites</a></li>
+            </ul>
+        </li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Партнеры</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Галерея</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Статьи</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Отзывы</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Контакты</a></li>
+    
+        <div class="nav-content__custom custom-inf" data-nav-custom-content>
+            <div class="custom-inf__quick-contacts">
+                {% include '../QuickContacts/QuickContacts.twig' %}
+            </div>
+        </div>
+    </ul>
+</nav>

@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="container-fluid">
+    <div class="row align-items-center flex-wrap">
+      <div class="order-0 order-xl-1 col-auto col-lg col-xl-auto">
+        {% include '../Logo/Logo.twig' %}
+      </div>
+      <div
+        class="order-4 order-xl-2 col-auto col-lg-12 col-xl-auto mt-lg-4 ml-auto ml-sm-0 mt-xl-0 m-xl-auto d-flex justify-content-center justify-content-xl-between align-items-center">
+        {% include '../Navigations/NavbarMain.twig' %}
+        <div class="header__search">
+          <div class="header__search-form">
+            {% include '../Search/SearchBlum.twig' %}
+          </div>
+          <div class="header__search-btn">
+            {% include '../Buttons/SearchBtn.twig' %}
+          </div>
+        </div>
+        <div class="header__callback-mobile">
+          {% include '../Buttons/BtnMini.twig' with
+            {
+              'data': 'data-toggle="modal" data-target="#callback"'
+            } %}
+        </div>
+        {% include '../Buttons/Hamburger.twig' %}
+      </div>
+      <div class="order-2 order-xl-3 d-none d-sm-block col-sm col-xl-auto ml-auto">
+        <div class="header__quick-contacts">
+          {% include '../QuickContacts/QuickContacts.twig' %}
+        </div>
+      </div>
+      <div class="order-3 order-xl-4 d-none d-md-block col-sm-auto col-lg col-xl-auto col-xxl-2 ml-xl-auto">
+        <div class="header__callback">
+          {% include '../Buttons/Btn.twig' with
+            {
+              'data': 'data-toggle="modal" data-target="#callback"'
+            } %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

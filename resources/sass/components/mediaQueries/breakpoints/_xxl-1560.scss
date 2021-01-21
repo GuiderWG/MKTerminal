@@ -1,0 +1,84 @@
+@media (max-width: 1559.98px) {
+  .navbar-main {
+    &__link {
+      padding: 12px 15px;
+      font-size: 1rem;
+    }
+  }
+  .quick-contacts__link {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+  .btn-default {
+    padding: 8px;
+
+    & p {
+      font-size: 1rem;
+    }
+  }
+  .main-slider {
+    &__group {
+      padding-right: 480px;
+    }
+
+    &__title {
+      font-size: 70px;
+      line-height: 80px;
+      margin-bottom: 30px;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 40px;
+    }
+
+    &__item_slide_1 &__active-picture {
+      max-width: 570px;
+      right: 20px;
+      transform: translateY(50%);
+    }
+
+    &__item_slide_2 &__active-picture {
+      max-width: 550px;
+      transform: translateY(50%);
+    }
+    &__content {
+      height: 450px;
+      margin: 0;
+    }
+
+    &__description {
+      margin-top: 0;
+    }
+
+    &__item {
+      height: 450px;
+    }
+  }
+
+  .blare-advantage {
+    &__front {
+      height: 254px;
+      padding: 35px 20px;
+    }
+    &__icon {
+      height: 109px;
+      margin-bottom: 15px;
+    }
+    &__title {
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+    &__text {
+      height: 220px;
+      font-size: .9rem;
+      padding: 35px 15px 15px;
+    }
+    &:hover {
+      transform: translateY(0);
+    }
+  }
+}

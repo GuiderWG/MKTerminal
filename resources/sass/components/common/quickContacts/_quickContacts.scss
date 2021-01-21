@@ -1,0 +1,39 @@
+.quick-contacts {
+  text-transform: uppercase;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  letter-spacing: 0.02em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    @include whiteOpacity(.8);
+    transition: .3s ease-in-out;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    &:hover {
+      color: $primary;
+    }
+
+  }
+  &__effect_bottom {
+    position: relative;
+    &::after {
+      content: '';
+      transform: scale(0);
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      background: rgba($white, 0.8);
+      transition: .3s ease-in-out;
+    }
+    .quick-contacts__link &:hover::after {
+      content: '';
+      transform: scale(1);
+      background: rgba($primary, 0.8);
+    }
+  }
+}

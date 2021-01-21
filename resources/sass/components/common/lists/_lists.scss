@@ -1,0 +1,12 @@
+.custom-list {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	& li::before {
+		content: "";
+		width: 10px;
+		height: 10px;
+		margin-right: 7px;
+		display: inline-block;
+	}
+}

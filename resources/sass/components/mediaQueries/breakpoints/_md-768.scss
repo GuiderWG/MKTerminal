@@ -1,0 +1,104 @@
+@media (max-width: 767.98px) {
+  .section {
+    padding-top: 60px;
+  }
+  h2 {
+    font-size: 4.42rem;
+  }
+  .header__callback {
+    &-mobile {
+      display: block;
+      margin-right: 15px;
+    }
+  }
+  .btn-default {
+    &_callback_mini {
+      max-height: 46px;
+
+      & svg {
+        max-width: 100%;
+      }
+    }
+  }
+  .quick-contacts {
+    &__link {
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+  }
+
+  .hero {
+    padding-top: 140px;
+    &__bg-anim {
+      height: auto;
+      bottom: 0;
+      right: -30%;
+      margin-bottom: 0;
+    }
+  }
+
+  .main-slider {
+    &__content {
+      height: auto;
+      margin: 0;
+      justify-content: flex-start;
+    }
+
+    &__description {
+      margin-top: 0;
+    }
+
+    &__group {
+      padding-right: 0;
+    }
+
+    &__item {
+      height: auto;
+    }
+    &__active-picture {
+      opacity: .8;
+      position: static;
+      align-self: flex-end;
+      margin-right: 40px;
+    }
+    &__item_slide_1 &__active-picture {
+      max-width: 360px;
+      transform: translateY(0%);
+    }
+    &__item_slide_2 &__active-picture {
+      max-width: 340px;
+      transform: translateY(0%);
+    }
+  }
+
+  .advantages-anima {
+    &__title {
+      margin-bottom: 40px;
+    }
+  }
+
+  .blare-advantage {
+    &__front {
+      height: auto;
+    }
+    &__text {
+      height: auto;
+      margin-bottom: 30px;
+      transform: translateY(-13%);
+    }
+    &:hover {
+      transform: translateY(0);
+    }
+    &:hover &__text {
+      margin-bottom: 30px;
+    }
+  }
+
+  .big-pattern {
+    & svg line, & svg rect, & svg path {
+      stroke-width: 2;
+      opacity: 1;
+    }
+  }
+
+}

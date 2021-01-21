@@ -1,0 +1,16 @@
+<form class="search-blum js_search_form">
+  <input type="hidden" name="module" value="search">
+  <input class="search-blum__input" type="text" name="searchword" placeholder="Найти товар или услугу...">
+  <div class="search-blum__buttons search-blum-nav">
+    <div class="search-blum-nav__find">
+      {% include "../Buttons/SearchBtn.twig" with
+        {
+          'type': 'submit'
+        } %}
+    </div>
+    <div class="search-blum-nav__close">
+      {% include "../Buttons/CloseBtn.twig" %}
+    </div>
+  </div>
+  
+</form>

@@ -1,0 +1,53 @@
+@media (max-width: 1559.98px) and (max-height: 919.88px) {
+  .section {
+    padding-top: 30px;
+    height: auto;
+  }
+  .hero {
+    padding-top: 160px;
+    &__bg-anim {
+      margin-bottom: -90px;
+    }
+  }
+
+  .main-slider {
+    &__content {
+      height: 600px;
+      padding-bottom: 0;
+    }
+
+    &__item {
+      height: 600px;
+    }
+    &__dots {
+      bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 1199.98px) and (max-height: 820px) {
+  .section {
+    padding-top: 60px;
+  }
+  .hero {
+    padding-top: 180px;
+    &__bg-anim {
+      margin-bottom: -90px;
+    }
+  }
+  .main-slider {
+    &__content {
+      height: 600px;
+      margin: 0;
+    }
+
+    &__description {
+      margin-top: 0;
+    }
+
+    &__item {
+      height: 600px;
+    }
+  }
+}
+

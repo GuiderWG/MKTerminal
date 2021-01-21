@@ -1,0 +1,16 @@
+.hero {
+  position: relative;
+  padding: 0;
+  &__main-slider {
+    position: relative;
+    z-index: 1;
+  }
+  &__bg-anim {
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    bottom: 0;
+    right: -45%;
+    z-index: 0;
+  }
+}

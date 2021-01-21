@@ -1,0 +1,9 @@
+@media (max-width: 380px) {
+  .hero__bg-anim {
+    display: none;
+  }
+  .main-slider__dots {
+    position: static;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,12 @@
+<form class="search-panel js_search_form">
+  <input type="hidden" name="module" value="search">
+  <input class="search-panel__input" type="text" name="searchword" placeholder="Найти...">
+  <div class="search-panel__buttons search-panel-nav">
+    <div class="search-panel-nav__find">
+      {% include "../Buttons/SearchBtn.twig" with
+        {
+          'type': 'submit'
+        } %}
+    </div>
+  </div>
+</form>

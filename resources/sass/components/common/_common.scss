@@ -1,0 +1,30 @@
+.section {
+  padding-top: 150px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.title-stroke {
+  -webkit-text-stroke: 2px rgba($white, .8);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+@import "header/header";
+@import "navigations/navbarMain";
+@import "navigations/navbarMobile";
+@import "navigations/fullPage";
+@import "logo/logo";
+@import "forms/forms";
+@import "buttons/buttons";
+@import "lists/lists";
+@import "quickContacts/quickContacts";
+@import "modals/modals";
+@import "search/search";
+@import "sliders/mainSlider";
+@import "patterns/gitPattern";
+@import "patterns/bigPattern";
+@import "advantages/blareAdvantage";

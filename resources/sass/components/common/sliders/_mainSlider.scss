@@ -1,0 +1,125 @@
+.main-slider {
+  position: relative;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  height: 0;
+  &.slick-initialized {
+    height: 100%;
+    opacity: 1;
+  }
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 100px;
+  }
+
+  &__group {
+    padding-right: 600px;
+  }
+
+  &__title {
+    font-size: 100px;
+    line-height: 110px;
+    -webkit-text-stroke: 2px rgba($white, .8);
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: .02em;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    @include whiteOpacity(.6);
+    margin-bottom: 50px;
+  }
+
+  &__active-picture {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__item {
+    height: 100vh;
+
+    &_slide_1 .main-slider__active-picture {
+      max-width: 940px;
+      right: 50px;
+      bottom: 50%;
+      transform: translateY(60%);
+    }
+    &_slide_2 .main-slider__active-picture {
+      max-width: 940px;
+      right: 50px;
+      bottom: 50%;
+      transform: translateY(60%);
+    }
+  }
+
+  &__description {
+    margin-top: 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text-picture {
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    max-width: 180px;
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    right: 50%;
+    margin-left: -90px;
+  }
+  &__dots {
+    position: absolute;
+    bottom: 80px;
+    margin: 0;
+  }
+}
+
+.main-dots {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin: 0 -15px;
+  &__item {
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $blue;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    &:focus {
+      outline: 0;
+    }
+  }
+  .slick-active &__item {
+    color: $primary;
+    font-size: 24px;
+  }
+}

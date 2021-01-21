@@ -1,0 +1,107 @@
+.form-default {
+  &__group {
+    position: relative;
+    transition: .8s;
+  }
+  &__input {
+    font-weight: 600;
+    font-size: 17px;
+    height: 55px;
+    text-decoration: none;
+    padding: 15px 10px 15px 20px;
+    margin-bottom: 30px;
+    @include borderDefault(rgba($white, .4));
+    transition: all .3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: transparent;
+    text-transform: uppercase;
+    color: $white !important;
+    width: 100%;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    &::placeholder {
+      @include whiteOpacity(.6);
+      font-feature-settings: 'pnum' on, 'lnum' on;
+    }
+    &:focus {
+      background: transparent;
+      box-shadow: none;
+      @include borderDefault($primary);
+    }
+    &:focus::placeholder {
+      color: $primary;
+    }
+  }
+
+  &__input.error_input {
+    border: 1px solid #DA0F00;
+    //@include shadowBtnLinkDefaultHover(#DA0F00, #DA0F00);
+  }
+  &__textarea {
+    resize: none;
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px 10px 15px 20px;
+    margin-bottom: 30px;
+    @include borderDefault(rgba($white, .4));
+    transition: all .5s ease-in-out;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: transparent;
+    color: $white;
+    width: 100%;
+    height: 300px;
+    &:focus {
+      //@include shadowBtnLinkDefaultHover(#00C3FF, #00C3FF);
+    }
+  }
+
+  &__textarea.error_input {
+    border: 1px solid $red;
+  }
+
+  &__privacy {
+    text-align: center;
+    @include whiteOpacity(.6);
+    margin-bottom: 30px;
+    font-size: .9rem;
+    & a {
+      @include whiteOpacity(.6);
+    }
+  }
+
+  &__button {
+    max-width: 270px;
+    margin: 0 auto;
+  }
+
+}
+
+.error_message {
+  background: none;
+  box-shadow: none;
+  opacity: 1;
+  position: relative;
+  text-align: center;
+}
+
+.callback-success {
+  color: #007d34;
+  &__text {
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+    &_big {
+      font-size: 20px;
+      display: block;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  i {
+    font-size: 50px;
+  }
+}

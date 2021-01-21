@@ -1,0 +1,101 @@
+.btn-default {
+  position: relative;
+  display: block;
+  color: $primary;
+  @include borderDefault($primary);
+  background: transparent;
+  overflow: hidden;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: $white;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  & p {
+    position: relative;
+    z-index: 5;
+    transition: color 0.6s;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+  }
+
+  &:hover p {
+    color: $darkBlue;
+  }
+
+  & span {
+    border-radius: 100%;
+    position: absolute;
+    display: block;
+    content: "";
+    z-index: 0;
+    width: 0;
+    height: 0;
+    background: $primary;
+    transform: translate(-50%, -50%);
+    transition: width .6s, padding-top .6s;
+  }
+
+  &:hover span {
+    width: 250%;
+    padding-top: 250%;
+  }
+}
+
+.search-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  opacity: .8;
+  transition: .3s ease-in-out;
+
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  & svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.close {
+  background: none;
+  border: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: 0;
+  opacity: .8;
+  transition: .3s ease-in-out;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+  & svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

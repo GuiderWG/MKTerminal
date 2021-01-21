@@ -1,0 +1,25 @@
+<!-- Callback -->
+<div class="modal modal-default fade" id="callback" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-default__content">
+      <div class="modal-header modal-default__header">
+        <h5 class="modal-title modal-default__title">Заказать звонок</h5>
+        <div class="modal-default__close">
+          {% include "../Buttons/CloseBtn.twig" with
+            {
+              'data': 'data-dismiss="modal"',
+            } %}
+        </div>
+      </div>
+      <div class="modal-body modal-default__body">
+        {% include "../Forms/FormDefault.twig" with
+          {
+            'additionalClass': 'test',
+            'inputs': '
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Имя"></div>
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Телефон"></div>',
+          } %}
+      </div>
+    </div>
+  </div>
+</div>
