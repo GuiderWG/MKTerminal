@@ -1,0 +1,11 @@
+.services {
+  &__title {
+    font-weight: 800;
+    font-size: 3.375rem;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 60px;
+  }
+}

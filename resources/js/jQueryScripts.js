@@ -18,16 +18,31 @@ export default $(document).ready(() => {
     anchors: [ 'otdely', 'napravleniya', 'preimushchestva', 'keysy', 'partnery', 'media', 'kontakty' ],
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: ['Просто и надёжно', 'Почему мы', 'О компании', 'Наши работы', 'Оставить заявку', 'Георгафия'],
+    navigationTooltips: [ 'Просто и надёжно', 'Почему мы', 'О компании', 'Наши работы', 'Оставить заявку', 'Георгафия' ],
     showActiveTooltip: false,
     responsiveWidth: 992,
     responsiveHeight: 920,
     verticalCentered: false,
     css3: true,
     onLeave: function(index, nextIndex, direction) {
-      //after leaving section 1
-      if(index === 1 && direction ==='down' && window.innerWidth > 767){
-        iconsPattern();
+
+      if (direction === 'down' && window.innerWidth > 767) {
+        switch (index) {
+          case 1:
+            iconsPattern();
+          case 2:
+            rightSide();
+            break;
+          case 3:
+            downSide();
+            break;
+          case 4:
+            onlyPattern('.feedback-us');
+            break;
+          case 5:
+            mapDots();
+            break;
+        }
       }
     },
   });
@@ -72,10 +87,10 @@ export default $(document).ready(() => {
       adaptiveHeight: true,
       dots: true,
       dotsClass: 'main-slider__dots main-dots',
-      customPaging : function(_, i) {
+      customPaging: function(_, i) {
         return `<button type="button" class="main-dots__item">${++i}</button>`;
       },
-      appendDots: '.container-dots'
+      appendDots: '.container-dots',
     });
     /* END Main slick slider */
 

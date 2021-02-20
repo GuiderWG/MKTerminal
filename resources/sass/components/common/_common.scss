@@ -1,7 +1,13 @@
+* {
+  outline: none;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
 .section {
   padding-top: 150px;
   overflow: hidden;
   height: 100vh;
+  position: relative;
 }
 
 .title-stroke {
@@ -13,9 +19,17 @@
   letter-spacing: .02em;
 }
 
+.pattern-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@import "preloader/preloader";
 @import "header/header";
 @import "navigations/navbarMain";
 @import "navigations/navbarMobile";
+@import "navigations/navbarFooter";
 @import "navigations/fullPage";
 @import "logo/logo";
 @import "forms/forms";
@@ -28,3 +42,8 @@
 @import "patterns/gitPattern";
 @import "patterns/bigPattern";
 @import "advantages/blareAdvantage";
+@import "services/services";
+@import "masks/masks";
+@import "cards/project";
+@import "footer/footer";
+@import "social/social";

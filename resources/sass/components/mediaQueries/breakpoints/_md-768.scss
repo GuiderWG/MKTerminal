@@ -29,6 +29,7 @@
 
   .hero {
     padding-top: 140px;
+
     &__bg-anim {
       height: auto;
       bottom: 0;
@@ -55,18 +56,34 @@
     &__item {
       height: auto;
     }
+
     &__active-picture {
       opacity: .8;
       position: static;
       align-self: flex-end;
       margin-right: 40px;
     }
+
     &__item_slide_1 &__active-picture {
       max-width: 360px;
       transform: translateY(0%);
     }
+
     &__item_slide_2 &__active-picture {
       max-width: 340px;
+      transform: translateY(0%);
+    }
+
+    &__item_slide_3 &__active-picture {
+      max-width: 270px;
+      transform: translateY(0%);
+    }
+    &__item_slide_4 &__active-picture {
+      max-width: 320px;
+      transform: translateY(0%);
+    }
+    &__item_slide_5 &__active-picture {
+      max-width: 300px;
       transform: translateY(0%);
     }
   }
@@ -81,14 +98,17 @@
     &__front {
       height: auto;
     }
+
     &__text {
       height: auto;
       margin-bottom: 30px;
       transform: translateY(-13%);
     }
+
     &:hover {
       transform: translateY(0);
     }
+
     &:hover &__text {
       margin-bottom: 30px;
     }
@@ -100,5 +120,33 @@
       opacity: 1;
     }
   }
+
+  .form-default_columns .form-default__privacy {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    &__copyright {
+      font-size: 0.82rem;
+    }
+
+    .privacy__link {
+      font-size: 0.88rem;
+    }
+
+    .quick-contacts__link {
+      font-size: 1rem;
+    }
+
+    &__search {
+      max-width: 200px;
+    }
+
+    &__callback {
+      width: 200px;
+    }
+  }
+
 
 }

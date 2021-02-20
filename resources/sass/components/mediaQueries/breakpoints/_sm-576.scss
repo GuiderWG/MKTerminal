@@ -1,6 +1,9 @@
-@media (max-width: 575.98px)  {
+@media (max-width: 575.98px) {
   h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 2rem;
   }
   .title-stroke {
     -webkit-text-stroke: 0px rgba(255, 255, 255, 1);
@@ -10,6 +13,7 @@
   .logo {
     max-width: 150px;
     display: block;
+
     & svg {
       max-width: 100%;
     }
@@ -29,6 +33,7 @@
 
   .main-slider {
     margin-bottom: 0;
+
     &__title {
       font-size: 36px;
       line-height: 42px;
@@ -38,20 +43,25 @@
       margin-bottom: 20px;
       @include whiteOpacity(.9)
     }
+
     &__subtitle {
       margin-bottom: 20px;
       line-height: 22px;
       max-width: 280px;
     }
+
     &__item_slide_1 &__active-picture {
       max-width: 280px;
     }
+
     &__item_slide_2 &__active-picture {
       max-width: 260px;
     }
+
     &__dots {
       left: 40px;
     }
+
     &__active-picture {
       margin-top: 30px;
       opacity: .9;
@@ -62,8 +72,45 @@
     &__text {
       margin-bottom: 15px;
     }
+
     &:hover &__text {
       margin-bottom: 15px;
+    }
+  }
+  .services__title {
+    margin-top: 40px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .list-services li a {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .feedback-us__title {
+    margin-bottom: 25px;
+  }
+
+  .map-static {
+    padding-bottom: 0;
+
+    &__object {
+      width: 1100px;
+      height: auto;
+      margin-left: 108%;
+
+      svg {
+        height: 100%;
+      }
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .footer {
+    .logo {
+      margin: 0 auto;
     }
   }
 }

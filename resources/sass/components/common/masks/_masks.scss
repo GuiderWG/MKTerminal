@@ -1,0 +1,13 @@
+.mask-photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  background: rgba($darkBlue, .99);
+  mix-blend-mode: color;
+  border-radius: 10px;
+  opacity: 1;
+  transition: .3s;
+}

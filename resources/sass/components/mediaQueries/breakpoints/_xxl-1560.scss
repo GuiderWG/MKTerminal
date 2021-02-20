@@ -1,4 +1,14 @@
 @media (max-width: 1559.98px) {
+  h2 {
+    font-size: 5.225rem;
+  }
+  .big-pattern {
+    height: 100%;
+
+    svg {
+      height: 100%;
+    }
+  }
   .navbar-main {
     &__link {
       padding: 12px 15px;
@@ -36,26 +46,24 @@
     }
 
     &__item_slide_1 &__active-picture {
-      max-width: 570px;
-      right: 20px;
+      max-width: 590px;
+      right: 60px;
       transform: translateY(50%);
     }
 
     &__item_slide_2 &__active-picture {
-      max-width: 550px;
+      max-width: 530px;
+      right: 60px;
       transform: translateY(50%);
     }
-    &__content {
-      height: 450px;
-      margin: 0;
+
+    &__item_slide_4 .main-slider__active-picture {
+      max-width: 420px;
+      right: 80px;
     }
 
     &__description {
       margin-top: 0;
-    }
-
-    &__item {
-      height: 450px;
     }
   }
 
@@ -64,21 +72,84 @@
       height: 254px;
       padding: 35px 20px;
     }
+
     &__icon {
       height: 109px;
       margin-bottom: 15px;
     }
+
     &__title {
       font-size: 1rem;
       letter-spacing: 0.02em;
     }
+
     &__text {
       height: 220px;
       font-size: .9rem;
       padding: 35px 15px 15px;
     }
+
     &:hover {
       transform: translateY(0);
     }
+  }
+  .advantages-anima__title {
+    margin-bottom: 80px;
+  }
+  .about-company__text {
+    max-width: 510px;
+  }
+  .services__title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+  .inf-bg {
+    background-position-x: right;
+
+    &__fill {
+      margin-right: 112px;
+    }
+  }
+
+
+  .list-services {
+    li {
+      margin: 24px 0;
+
+      a {
+        font-size: 1.3rem;
+        line-height: 1.2;
+
+        &:hover {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
+  .feedback-us__title {
+    margin-bottom: 40px;
+    max-width: 900px;
+  }
+
+  .form-static-bg {
+    padding: 35px 300px 35px 40px;
+    margin-bottom: 40px;
+
+    &:before {
+      right: 57px;
+      bottom: 21px;
+      width: 164px;
+      height: 426px;
+    }
+  }
+
+  .map-static__title {
+    max-width: 600px;
+  }
+
+  .footer__search {
+    margin-bottom: 10px;
+    max-width: 230px;
   }
 }

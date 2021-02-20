@@ -17,6 +17,12 @@
   letter-spacing: 0.02em;
 }
 
+.pattern-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .header {
   padding: 30px 0;
   position: fixed;
@@ -693,6 +699,12 @@
   display: inline-block;
 }
 
+.list-services {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
 .quick-contacts {
   text-transform: uppercase;
   -webkit-font-feature-settings: "pnum" on, "lnum" on;
@@ -1013,7 +1025,7 @@
 }
 
 .main-slider__item_slide_1 .main-slider__active-picture {
-  max-width: 940px;
+  max-width: 920px;
   right: 50px;
   bottom: 50%;
   -webkit-transform: translateY(60%);
@@ -1021,7 +1033,7 @@
 }
 
 .main-slider__item_slide_2 .main-slider__active-picture {
-  max-width: 940px;
+  max-width: 900px;
   right: 50px;
   bottom: 50%;
   -webkit-transform: translateY(60%);
@@ -1125,7 +1137,7 @@
   z-index: 2;
   padding: 35px;
   background: #01273A;
-  box-shadow: 0 12px 60px rgba(1, 30, 45, 0.8);
+  box-shadow: 0 12px 50px rgba(1, 30, 45, 0.6);
   border-radius: 15px;
 }
 
@@ -1149,7 +1161,7 @@
   background: #013E61;
   border-radius: 15px;
   z-index: 1;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -1188,6 +1200,16 @@
           transform: translateY(-13%);
 }
 
+.services__title {
+  font-weight: 800;
+  font-size: 3.375rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #24CBB7;
+  margin-bottom: 60px;
+}
+
 .hero {
   position: relative;
   padding: 0;
@@ -1217,7 +1239,54 @@
   margin-bottom: 110px;
 }
 
-@media (max-width: 1559.98px) and (max-height: 919.88px) {
+.about-company {
+  padding-bottom: 60px;
+}
+
+.about-company__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.about-company__title {
+  margin-top: 100px;
+  margin-bottom: 35px;
+}
+
+.about-company__text {
+  max-width: 550px;
+}
+
+.about-company__text > p {
+  opacity: 0.6;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.about-company__button {
+  margin-top: 50px;
+  max-width: 200px;
+}
+
+.about-company__services {
+  text-align: right;
+}
+
+.inf-bg {
+  background: url(../images/inf-bg.png?766dffdc35d58254a0f8686526aabe47);
+  background-size: cover;
+}
+
+.inf-bg__fill {
+  height: 100vh;
+  margin-right: 20px;
+  background-color: #013E61;
+}
+
+@media (max-height: 929.88px) {
   .section {
     padding-top: 30px;
     height: auto;
@@ -1245,7 +1314,7 @@
   }
 }
 
-@media (max-width: 1199.98px) and (max-height: 820px) {
+@media (max-height: 820px) {
   .section {
     padding-top: 60px;
   }
@@ -1273,6 +1342,14 @@
 }
 
 @media (max-width: 1559.98px) {
+  .big-pattern {
+    height: 100%;
+  }
+
+  .big-pattern svg {
+    height: 100%;
+  }
+
   .navbar-main__link {
     padding: 12px 15px;
     font-size: 1rem;
@@ -1310,29 +1387,21 @@
   }
 
   .main-slider__item_slide_1 .main-slider__active-picture {
-    max-width: 570px;
-    right: 20px;
+    max-width: 590px;
+    right: 60px;
     -webkit-transform: translateY(50%);
             transform: translateY(50%);
   }
 
   .main-slider__item_slide_2 .main-slider__active-picture {
-    max-width: 550px;
+    max-width: 530px;
+    right: 60px;
     -webkit-transform: translateY(50%);
             transform: translateY(50%);
   }
 
-  .main-slider__content {
-    height: 450px;
-    margin: 0;
-  }
-
   .main-slider__description {
     margin-top: 0;
-  }
-
-  .main-slider__item {
-    height: 450px;
   }
 
   .blare-advantage__front {
@@ -1469,9 +1538,22 @@
   .blare-advantage:hover .blare-advantage__text {
     margin-bottom: 0;
   }
+
+  .big-pattern {
+    height: 100%;
+  }
+
+  .big-pattern svg {
+    height: 100%;
+  }
 }
 
 @media (max-width: 991.98px) {
+  .section {
+    padding-top: 30px;
+    height: auto;
+  }
+
   .header__search {
     display: none;
   }
@@ -1550,6 +1632,10 @@
 }
 
 @media (max-width: 767.98px) {
+  .section {
+    padding-top: 60px;
+  }
+
   h2 {
     font-size: 4.42rem;
   }
@@ -1642,6 +1728,13 @@
 
   .blare-advantage:hover .blare-advantage__text {
     margin-bottom: 30px;
+  }
+
+  .big-pattern svg line,
+  .big-pattern svg rect,
+  .big-pattern svg path {
+    stroke-width: 2;
+    opacity: 1;
   }
 }
 

@@ -1,36 +1,70 @@
-@media (max-width: 1559.98px) and (max-height: 919.88px) {
+@media (max-height: 929.88px) {
   .section {
-    padding-top: 30px;
+    padding-top: 40px;
     height: auto;
   }
   .hero {
     padding-top: 160px;
+
     &__bg-anim {
       margin-bottom: -90px;
     }
   }
 
+  .our-projects, .feedback-us {
+    padding-bottom: 60px;
+  }
+
   .main-slider {
     &__content {
-      height: 600px;
+      height: 700px;
       padding-bottom: 0;
     }
 
     &__item {
-      height: 600px;
+      height: 700px;
+
+      &_slide_1 .main-slider__active-picture {
+        max-width: 720px;
+        transform: translateY(53%);
+      }
+
+      &_slide_2 .main-slider__active-picture {
+        max-width: 600px;
+        transform: translateY(55%);
+      }
+
+      &_slide_3 .main-slider__active-picture {
+        max-width: 460px;
+        transform: translateY(50%);
+      }
+      &_slide_5 .main-slider__active-picture {
+        max-width: 550px;
+        right: 50px;
+        transform: translateY(50%);
+      }
+
+      &_slide_6 .main-slider__active-picture {
+        max-width: 550px;
+        right: 75px;
+        bottom: 50%;
+        transform: translateY(58%);
+      }
     }
+
     &__dots {
       bottom: 0;
     }
   }
 }
 
-@media (max-width: 1199.98px) and (max-height: 820px) {
+@media (max-height: 820px) {
   .section {
     padding-top: 60px;
   }
   .hero {
     padding-top: 180px;
+
     &__bg-anim {
       margin-bottom: -90px;
     }
@@ -47,6 +81,31 @@
 
     &__item {
       height: 600px;
+
+      &_slide_1 .main-slider__active-picture {
+        max-width: 680px;
+        transform: translateY(50%);
+      }
+
+      &_slide_2 .main-slider__active-picture {
+        max-width: 600px;
+        transform: translateY(55%);
+      }
+
+      &_slide_3 .main-slider__active-picture {
+        max-width: 460px;
+        transform: translateY(50%);
+      }
+
+      &_slide_4 .main-slider__active-picture {
+        max-width: 500px;
+        transform: translateY(50%);
+      }
+
+      &_slide_5 .main-slider__active-picture {
+        max-width: 500px;
+        transform: translateY(52%);
+      }
     }
   }
 }

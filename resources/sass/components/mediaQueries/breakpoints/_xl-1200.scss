@@ -47,6 +47,18 @@
     &__item_slide_2 &__active-picture {
       max-width: 440px;
     }
+    &__item_slide_3 &__active-picture {
+      max-width: 340px;
+      right: 90px;
+    }
+    &__item_slide_4 &__active-picture {
+      max-width: 350px;
+      right: 70px;
+    }
+    &__item_slide_5 &__active-picture {
+      max-width: 450px;
+      right: 50px;
+    }
     &__dots {
       bottom: 0;
     }
@@ -97,6 +109,21 @@
     height: 100%;
     & svg {
       height: 100%;
+    }
+  }
+  .inf-bg__fill {
+    margin-right: 0;
+  }
+  .about-company {
+    background: $blue;
+    &__text {
+      max-width: 100%;
+      & > p {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        opacity: .8;
+      }
     }
   }
 }

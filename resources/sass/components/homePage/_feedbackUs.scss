@@ -1,0 +1,11 @@
+.feedback-us {
+  &__inf {
+    position: relative;
+    z-index: 2;
+  }
+  &__title {
+    text-align: left;
+    margin-bottom: 60px;
+    max-width: 900px;
+  }
+}

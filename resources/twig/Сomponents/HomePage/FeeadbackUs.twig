@@ -1,0 +1,28 @@
+<section class="section feedback-us fp-auto-height-responsive">
+  
+  <div class="feedback-us__inf">
+    <div class="container">
+      <h4 class="feedback-us__title title-stroke">Оставьте заявку и наш менеджер свяжется с вами</h4>
+      <div class="feedback-us__form form-static-bg">
+        {% include "../Common/Forms/FormDefault2Columns.twig" with
+          {
+            'additionalClass': 'form-default_columns',
+            'inputs': '
+            <div class="row justify-content-end">
+              <div class="col-md-6">
+                <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Имя"></div>
+                <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Телефон"></div>
+                <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="E-mail"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group form-default__group"><textarea class="form-control form-default__textarea" placeholder="Ваш комментарий"></textarea></div>
+              </div>
+            </div>',
+          } %}
+      </div>
+    </div>
+  </div>
+  
+  {%  include "../Common/Patterns/BigPattern.twig" %}
+</section>
+

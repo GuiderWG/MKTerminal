@@ -8,7 +8,7 @@
     z-index: 2;
     padding: 35px;
     background: $darkBlue;
-    box-shadow: 0 12px 60px rgba(1, 30, 45, 0.8);
+    box-shadow: 0 12px 50px rgba(1, 30, 45, 0.6);
     border-radius: 15px;
   }
   &__icon {
@@ -29,7 +29,7 @@
     background: $blue;
     border-radius: 15px;
     z-index: 1;
-    @include whiteOpacity(.6);
+    @include whiteOpacity(.8);
     font-weight: 500;
     transform: translateY(-100%);
     transition: transform .4s ease-in-out;

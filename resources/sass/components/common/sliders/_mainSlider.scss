@@ -3,6 +3,7 @@
   opacity: 0;
   transition: opacity .5s ease-in-out;
   height: 0;
+
   &.slick-initialized {
     height: 100%;
     opacity: 1;
@@ -52,16 +53,45 @@
     height: 100vh;
 
     &_slide_1 .main-slider__active-picture {
-      max-width: 940px;
-      right: 50px;
+      max-width: 700px;
+      right: 60px;
       bottom: 50%;
       transform: translateY(60%);
     }
+
     &_slide_2 .main-slider__active-picture {
-      max-width: 940px;
-      right: 50px;
+      max-width: 650px;
+      right: 60px;
       bottom: 50%;
       transform: translateY(60%);
+    }
+
+    &_slide_3 .main-slider__active-picture {
+      max-width: 500px;
+      right: 135px;
+      bottom: 50%;
+      transform: translateY(52%);
+    }
+
+    &_slide_4 .main-slider__active-picture {
+      max-width: 600px;
+      right: 125px;
+      bottom: 50%;
+      transform: translateY(52%);
+    }
+
+    &_slide_5 .main-slider__active-picture {
+      max-width: 680px;
+      right: 125px;
+      bottom: 50%;
+      transform: translateY(52%);
+    }
+
+    &_slide_6 .main-slider__active-picture {
+      max-width: 650px;
+      right: 125px;
+      bottom: 50%;
+      transform: translateY(58%);
     }
   }
 
@@ -91,6 +121,7 @@
     right: 50%;
     margin-left: -90px;
   }
+
   &__dots {
     position: absolute;
     bottom: 80px;
@@ -104,6 +135,7 @@
   display: flex;
   align-items: center;
   margin: 0 -15px;
+
   &__item {
     background: none;
     border: none;
@@ -114,10 +146,12 @@
     text-transform: uppercase;
     color: $blue;
     font-feature-settings: 'pnum' on, 'lnum' on;
+
     &:focus {
       outline: 0;
     }
   }
+
   .slick-active &__item {
     color: $primary;
     font-size: 24px;

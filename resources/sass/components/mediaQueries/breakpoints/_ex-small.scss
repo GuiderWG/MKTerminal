@@ -6,4 +6,21 @@
     position: static;
     justify-content: center;
   }
+  .hero {
+    padding-bottom: 10px;
+  }
+  .logo {
+    max-width: 140px;
+  }
+  .header__callback-mobile {
+    margin-right: 10px;
+  }
+  .main-slider__active-picture {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-slider__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
 }

@@ -1,0 +1,46 @@
+.about-company {
+  padding-bottom: 60px;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    max-width: 580px;
+
+    & > p {
+      opacity: .6;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+    max-width: 200px;
+  }
+
+  &__services {
+    text-align: right;
+  }
+}
+
+.inf-bg {
+  background: url(../../../../public/images/resources/img/inf-bg.png);
+  background-size: cover;
+
+  &__fill {
+    height: 100vh;
+    margin-right: 20px;
+    background-color: $blue;
+  }
+}
