@@ -28,10 +28,11 @@ export function preloaderAnimation() {
         .add(
           {
             targets: preloaderLetter,
-            opacity: 1,
-            translateY: -50,
-            delay: anime.stagger(100, { start: 1000 }),
+            //opacity: 1,
+            //translateY: -50,
+            delay: anime.stagger(110, { start: 1000 }),
             translateX: [-10, 0],
+            opacity: [0, 1],
           },
           500
         )
