@@ -1,4 +1,16 @@
 @media (max-width: 1199.98px) {
+  .preloader {
+    &__title {
+      font-size: 78px;
+    }
+    &__bg {
+      width: 1420px;
+    }
+    &__load {
+      top: 100px;
+      width: 1420px;
+    }
+  }
   .header {
     padding: 20px 0;
     &__search-form {

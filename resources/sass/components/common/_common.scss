@@ -3,6 +3,10 @@
   font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .section {
   padding-top: 150px;
   overflow: hidden;

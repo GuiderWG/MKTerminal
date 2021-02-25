@@ -1,4 +1,21 @@
 @media (max-width: 380px) {
+  .preloader {
+    text-align: center;
+    &__title {
+      font-size: 40px;
+      line-height: normal;
+      .letter-space {
+        display: block;
+      }
+    }
+    &__bg {
+      width: 600px;
+    }
+    &__load {
+      top: 40px;
+      width: 900px;
+    }
+  }
   .hero__bg-anim {
     display: none;
   }
