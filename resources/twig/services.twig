@@ -1,0 +1,54 @@
+{% extends "Layouts/app.twig" %}
+
+{% set title = 'MK Terminal' %}
+{% set app = 'app app_page' %}
+
+{% block body %}
+  
+  {% include "Сomponents/Common/Patterns/FullPattern.twig" %}
+  {% include "Сomponents/Common/Header/Header.twig" %}
+  {% include "Сomponents/Common/Navigations/NavbarMobile.twig" %}
+  
+  <div class="content">
+    {% include "Сomponents/SecondPages/Partials/Breadcrumbs/Breadcrumbs.twig" %}
+    <div class="container">
+      <h1>Услуги</h1>
+  
+      <div class="content__services">
+        {% include "Сomponents/SecondPages/ServicesBlock.twig" %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-static-standard form-static-standard_theme_blue">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 pl-4">
+          <div class="form-static-standard__group">
+            <div class="form-static-standard__title">Оставьте заявку и наш менеджер свяжется с вами</div>
+            {% include "Сomponents/Common/Forms/FormDefault.twig" with
+              {
+                'inputs': '
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Имя"></div>
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Телефон"></div>',
+              } %}
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="form-static-standard__map map">
+            <div class="map__yamap" id="map">
+              {% include "Сomponents/Common/Preloader/PreloaderMini.twig"  %}
+            </div>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+      
+    
+  </div>
+  
+  {% include "Сomponents/Common/Footer/Footer.twig" %}
+  {% include "Сomponents/Common/Modals/Modals.twig" %}
+{% endblock %}

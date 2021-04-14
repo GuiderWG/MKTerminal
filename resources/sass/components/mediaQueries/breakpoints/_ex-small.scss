@@ -40,4 +40,33 @@
     font-size: 30px;
     line-height: 38px;
   }
+
+  .s-category {
+    padding: 20px;
+
+    &__icon {
+      max-width: 30px;
+    }
+
+    &__link {
+      font-size: .9rem;
+    }
+  }
+
+  .sub-category {
+    padding-left: 0;
+    list-style: none;
+
+    &__item {
+      margin-bottom: 8px;
+      display: block;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__link {
+      font-size: 1rem;
+    }
+  }
 }

@@ -1,0 +1,49 @@
+.necessary-services {
+  padding: 75px 0;
+  background: $blue;
+
+  &_bg_transparent {
+    background: transparent;
+  }
+
+  &_padding_sm {
+    padding: 35px 0 0;
+  }
+
+  &__info {
+    padding-right: 30px;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 2.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    @include whiteOpacity(.8);
+    &_size_2 {
+      font-size: 2rem;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    @include whiteOpacity(.8);
+  }
+
+  p {
+    @include whiteOpacity(.6);
+  }
+
+  .default-list {
+    @include whiteOpacity(.6);
+    &-number {
+      @include whiteOpacity(.6);
+    }
+  }
+}

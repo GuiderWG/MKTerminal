@@ -1,0 +1,66 @@
+.diafan-admin-panel.diafan-admin-panel_bottom {
+  top: auto;
+  transform: translateY(50%);
+  bottom: 50%;
+  right: 0;
+  left: auto;
+  background: rgba(45,45,45, .8);
+  height: auto;
+  width: max-content;
+  padding: 0;
+}
+
+header.diafan-admin-panel .diafan-admin-logo {
+  display: none;
+}
+
+.diafan-admin-panel .diafan-admin-link {
+  float: none;
+  border-right: 0;
+}
+
+.diafan-admin-panel .diafan-admin-link span {
+  font-size: 0;
+}
+
+.diafan-admin-panel .diafan-admin-toggle,
+.diafan-admin-panel .diafan-admin-settings,
+.diafan-admin-panel .diafan-admin-link_add,
+.diafan-admin-panel .diafan-admin-user {
+  display: none;
+}
+
+.diafan-admin-panel .diafan-admin-unit {
+  text-align: center;
+}
+
+.diafan-admin-panel .diafan-admin-link > a {
+  display: block;
+  padding: 18px 16px 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diafan-admin-panel .diafan-admin-sign-out {
+  float: none;
+  margin: 0;
+}
+
+.devoloper_tech {
+  display: none !important;
+}
+
+.diafan-admin-toggle {
+  display: none !important;
+}
+
+.useradmin_meta {
+  background: #2E2E2E !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}

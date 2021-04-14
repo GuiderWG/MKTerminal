@@ -1,0 +1,14 @@
+.otb-card {
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__text {
+    @include whiteOpacity(.6)
+  }
+
+}

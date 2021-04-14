@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <title>MK Terminal</title>
+  <meta name="description" content="">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer="defer"></script>
+  <link rel="stylesheet" href="css/bundle.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <script src="js/bundle.js" defer="defer"></script>
+  <script src="js/main.js" defer="defer"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<main class="app app_page">
+    
+  <canvas id="canvas" class="pattern-full"></canvas>  <header class="header">
+  <div class="container-fluid">
+    <div class="row align-items-center flex-wrap">
+      <div class="order-0 order-xl-1 col-auto col-lg col-xl-auto">
+        <a href="/" class="logo">
+  <svg class="rand-anim" width="160" height="61" viewBox="0 0 160 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="rand-anim__el" d="M51.7064 58.3055C52.154 59.9762 51.1625 60.968 49.4916 60.5207L33.2182 56.1642C31.5474 55.7169 29.83 53.9999 29.3823 52.3292L17.1133 6.5408C16.6657 4.87007 17.6572 3.87828 19.3281 4.32558L35.6015 8.68212C37.2723 9.12941 38.9897 10.8464 39.4374 12.5171L51.7064 58.3055Z" fill="#013E61"/>
+    <path class="rand-anim__el" d="M42.157 9.79297C43.4936 10.1508 44.8675 11.5244 45.2257 12.861L46.6847 18.3062C47.0428 19.6428 46.2496 20.4362 44.9129 20.0784L21.1587 13.7192C19.822 13.3613 18.4481 11.9877 18.09 10.6512L16.6309 5.20593C16.2728 3.86935 17.066 3.07592 18.4027 3.43375L42.157 9.79297Z" fill="url(#paint0_linear)"/>
+    <path class="rand-anim__el" d="M26.703 18.6578C28.0396 19.0157 29.4135 20.3893 29.7717 21.7258L31.1767 26.9694C31.5348 28.306 30.7415 29.0994 29.4049 28.7416L7.82435 22.9643C6.48768 22.6064 5.11378 21.2328 4.75564 19.8963L3.35064 14.6527C2.9925 13.3161 3.78575 12.5227 5.12242 12.8805L26.703 18.6578Z" fill="url(#paint1_linear)"/>
+    <path class="rand-anim__el" d="M34.077 20.3095C32.7403 19.9516 31.9471 20.7451 32.3052 22.0817L33.7102 27.3252C34.0684 28.6618 35.4423 30.0354 36.7789 30.3932L41.0144 31.5271C42.351 31.8849 43.1443 31.0915 42.7862 29.7549L41.3812 24.5114C41.023 23.1748 39.6491 21.8012 38.3124 21.4433L34.077 20.3095Z" fill="url(#paint2_linear)"/>
+    <path class="rand-anim__el" d="M42.7386 36.171C44.0753 36.5288 45.4492 37.9024 45.8073 39.239L47.2123 44.4826C47.5704 45.8192 46.7772 46.6126 45.4405 46.2548L23.86 40.4775C22.5233 40.1196 21.1494 38.746 20.7913 37.4094L19.3863 32.1659C19.0281 30.8293 19.8214 30.0359 21.1581 30.3937L42.7386 36.171Z" fill="url(#paint3_linear)"/>
+    <path class="rand-anim__el" d="M34.2674 47.139C35.6041 47.4969 36.978 48.8705 37.3361 50.207L38.7411 55.4506C39.0993 56.7872 38.306 57.5806 36.9693 57.2228L15.3888 51.4455C14.0521 51.0876 12.6782 49.714 12.3201 48.3775L10.9151 43.1339C10.557 41.7973 11.3502 41.0039 12.6869 41.3617L34.2674 47.139Z" fill="url(#paint4_linear)"/>
+    <path class="rand-anim__el" d="M6.6557 1.78173C7.99236 2.13956 9.36627 3.51316 9.72441 4.84975L11.1294 10.0933C11.4876 11.4299 10.6943 12.2233 9.35764 11.8655L5.12221 10.7316C3.78554 10.3738 2.41163 9.00018 2.05349 7.6636L0.648489 2.42005C0.290352 1.08346 1.0836 0.290028 2.42027 0.647864L6.6557 1.78173Z" fill="url(#paint5_linear)"/>
+    <path class="rand-anim__el" d="M14.2206 29.0976C15.5573 29.4555 16.9312 30.8291 17.2894 32.1657L18.6944 37.4092C19.0525 38.7458 18.2592 39.5392 16.9226 39.1814L12.6871 38.0475C11.3505 37.6897 9.97657 36.3161 9.61843 34.9795L8.21343 29.736C7.85529 28.3994 8.64855 27.6059 9.98521 27.9638L14.2206 29.0976Z" fill="url(#paint6_linear)"/>
+    <path class="rand-anim__el" d="M54.6865 39.26C56.0231 39.6178 57.397 40.9914 57.7552 42.328L59.1602 47.5716C59.5183 48.9082 58.7251 49.7016 57.3884 49.3437L53.153 48.2099C51.8163 47.8521 50.4424 46.4785 50.0843 45.1419L48.6793 39.8983C48.3211 38.5617 49.1144 37.7683 50.451 38.1261L54.6865 39.26Z" fill="url(#paint7_linear)"/>
+    <path d="M78.304 13.9965H73.8607V26.2499H71.4042V13.9965H67V12H78.304V13.9965Z" fill="white"/>
+    <path d="M83.7358 26.4456C82.2286 26.4456 81.0052 25.9726 80.0656 25.0265C79.1326 24.0739 78.6661 22.8081 78.6661 21.2291V20.9355C78.6661 19.8785 78.8684 18.9357 79.2729 18.1071C79.684 17.2719 80.2581 16.6227 80.9954 16.1595C81.7327 15.6962 82.5548 15.4646 83.4617 15.4646C84.9037 15.4646 86.0161 15.9246 86.7991 16.8446C87.5886 17.7645 87.9833 19.0662 87.9833 20.7496V21.7087H81.0639C81.1357 22.583 81.426 23.2746 81.935 23.7835C82.4504 24.2925 83.0964 24.5469 83.8728 24.5469C84.9624 24.5469 85.8498 24.1065 86.5349 23.2257L87.8169 24.4491C87.3928 25.082 86.8252 25.5746 86.114 25.9269C85.4093 26.2727 84.6166 26.4456 83.7358 26.4456ZM83.4519 17.3731C82.7995 17.3731 82.271 17.6014 81.8665 18.0582C81.4684 18.5149 81.214 19.151 81.1031 19.9666H85.6344V19.7905C85.5823 18.9944 85.3702 18.3942 84.9983 17.9896C84.6264 17.5786 84.1109 17.3731 83.4519 17.3731Z" fill="white"/>
+    <path d="M99.1111 21.0628C99.1111 22.7005 98.7392 24.0086 97.9954 24.9873C97.2516 25.9595 96.2533 26.4456 95.0006 26.4456C93.8392 26.4456 92.9095 26.0639 92.2113 25.3005V30.3213H89.8331V15.6603H92.0254L92.1232 16.7369C92.8214 15.8887 93.7707 15.4646 94.9712 15.4646C96.2631 15.4646 97.2745 15.9474 98.0052 16.9131C98.7425 17.8722 99.1111 19.2065 99.1111 20.916V21.0628ZM96.7427 20.8572C96.7427 19.8002 96.5306 18.9618 96.1065 18.342C95.689 17.7221 95.0887 17.4122 94.3057 17.4122C93.3336 17.4122 92.6354 17.8135 92.2113 18.616V23.3138C92.6419 24.1359 93.3466 24.5469 94.3253 24.5469C95.0822 24.5469 95.6726 24.2435 96.0968 23.6367C96.5274 23.0234 96.7427 22.0969 96.7427 20.8572Z" fill="white"/>
+    <path d="M107.42 23.3236L110.552 15.6603H113.527V26.2499H111.149V19.2424L108.233 26.2499H106.618L103.691 19.2032V26.2499H101.313V15.6603H104.308L107.42 23.3236Z" fill="white"/>
+    <path d="M122.815 15.6603H125.184V26.2499H122.815V19.1837L118.666 26.2499H116.297V15.6603H118.666V22.7266L122.815 15.6603Z" fill="white"/>
+    <path d="M136.683 26.2499H134.305V21.973H130.185V26.2499H127.807V15.6603H130.185V20.0743H134.305V15.6603H136.683V26.2499Z" fill="white"/>
+    <path d="M145.55 26.2499C145.446 26.0476 145.355 25.7181 145.276 25.2614C144.52 26.0509 143.593 26.4456 142.497 26.4456C141.433 26.4456 140.566 26.1422 139.894 25.5354C139.222 24.9286 138.886 24.1783 138.886 23.2844C138.886 22.1556 139.303 21.2911 140.138 20.6909C140.98 20.0841 142.18 19.7807 143.74 19.7807H145.198V19.0858C145.198 18.5377 145.045 18.1006 144.738 17.7743C144.431 17.4416 143.965 17.2752 143.339 17.2752C142.797 17.2752 142.353 17.4122 142.008 17.6862C141.662 17.9538 141.489 18.2963 141.489 18.7139H139.111C139.111 18.1332 139.303 17.5916 139.688 17.0892C140.073 16.5803 140.595 16.1823 141.254 15.8952C141.919 15.6081 142.66 15.4646 143.476 15.4646C144.715 15.4646 145.704 15.7778 146.441 16.4042C147.178 17.024 147.557 17.8983 147.576 19.0271V23.8031C147.576 24.7557 147.71 25.5158 147.978 26.0835V26.2499H145.55ZM142.937 24.5371C143.407 24.5371 143.848 24.423 144.259 24.1946C144.676 23.9662 144.989 23.6596 145.198 23.2746V21.2781H143.916C143.035 21.2781 142.373 21.4314 141.929 21.7381C141.486 22.0447 141.264 22.4786 141.264 23.0397C141.264 23.4965 141.414 23.8618 141.714 24.1359C142.021 24.4034 142.428 24.5371 142.937 24.5371Z" fill="white"/>
+    <path d="M159.066 15.6603V26.2499H156.688V17.5786H153.693L153.498 21.2683C153.374 23.043 153.031 24.3186 152.47 25.095C151.915 25.8649 151.064 26.2499 149.915 26.2499H149.181L149.172 24.2729L149.661 24.224C150.183 24.1522 150.561 23.8357 150.796 23.2746C151.038 22.707 151.191 21.6761 151.256 20.1819L151.452 15.6603H159.066Z" fill="white"/>
+    <path d="M78.8814 44.6108C78.7379 46.1311 78.1768 47.3186 77.1981 48.1733C76.2194 49.0215 74.9177 49.4456 73.293 49.4456C72.1577 49.4456 71.1562 49.1781 70.2884 48.6431C69.4272 48.1015 68.7617 47.3349 68.2919 46.3431C67.8221 45.3514 67.5774 44.1998 67.5579 42.8883V41.5573C67.5579 40.2132 67.796 39.029 68.2723 38.0046C68.7486 36.9802 69.4304 36.1908 70.3178 35.6362C71.2117 35.0816 72.2426 34.8043 73.4105 34.8043C74.9829 34.8043 76.2487 35.2316 77.2078 36.0864C78.167 36.9411 78.7248 38.1482 78.8814 39.7075H76.4151C76.2976 38.6832 75.9975 37.9459 75.5147 37.4957C75.0384 37.039 74.337 36.8106 73.4105 36.8106C72.3339 36.8106 71.5053 37.2053 70.9246 37.9948C70.3504 38.7778 70.0568 39.9294 70.0438 41.4496V42.7122C70.0438 44.252 70.3178 45.4264 70.8659 46.2355C71.4205 47.0445 72.2295 47.4491 73.293 47.4491C74.2652 47.4491 74.996 47.2305 75.4853 46.7933C75.9747 46.3562 76.2846 45.6287 76.4151 44.6108H78.8814Z" fill="white"/>
+    <path d="M85.5366 49.4456C84.0294 49.4456 82.806 48.9726 81.8665 48.0265C80.9334 47.0739 80.4669 45.8081 80.4669 44.2291V43.9355C80.4669 42.8785 80.6692 41.9357 81.0737 41.1071C81.4848 40.2719 82.0589 39.6227 82.7962 39.1595C83.5335 38.6962 84.3556 38.4646 85.2625 38.4646C86.7045 38.4646 87.8169 38.9246 88.5999 39.8446C89.3894 40.7645 89.7841 42.0662 89.7841 43.7496V44.7087H82.8647C82.9365 45.583 83.2268 46.2746 83.7358 46.7835C84.2512 47.2925 84.8972 47.5469 85.6736 47.5469C86.7632 47.5469 87.6506 47.1065 88.3357 46.2257L89.6178 47.4491C89.1937 48.082 88.626 48.5746 87.9148 48.9269C87.2102 49.2727 86.4174 49.4456 85.5366 49.4456ZM85.2528 40.3731C84.6003 40.3731 84.0718 40.6014 83.6673 41.0582C83.2693 41.5149 83.0148 42.151 82.9039 42.9666H87.4353V42.7905C87.3831 41.9944 87.171 41.3942 86.7991 40.9896C86.4272 40.5786 85.9117 40.3731 85.2528 40.3731Z" fill="white"/>
+    <path d="M100.912 44.0628C100.912 45.7005 100.54 47.0087 99.7962 47.9874C99.0524 48.9595 98.0541 49.4456 96.8014 49.4456C95.64 49.4456 94.7103 49.0639 94.0121 48.3005V53.3213H91.6339V38.6603H93.8262L93.924 39.7369C94.6222 38.8887 95.5715 38.4646 96.7721 38.4646C98.0639 38.4646 99.0753 38.9474 99.806 39.9131C100.543 40.8722 100.912 42.2065 100.912 43.916V44.0628ZM98.5435 43.8572C98.5435 42.8002 98.3314 41.9618 97.9073 41.342C97.4898 40.7221 96.8895 40.4122 96.1065 40.4122C95.1344 40.4122 94.4362 40.8135 94.0121 41.616V46.3138C94.4427 47.1359 95.1474 47.5469 96.1261 47.5469C96.883 47.5469 97.4735 47.2435 97.8976 46.6367C98.3282 46.0234 98.5435 45.0969 98.5435 43.8572Z" fill="white"/>
+    <path d="M103.114 49.2499V38.6603H107.411C108.859 38.6603 109.962 38.9148 110.719 39.4237C111.475 39.9261 111.854 40.6504 111.854 41.5964C111.854 42.0858 111.7 42.5262 111.394 42.9177C111.094 43.3026 110.647 43.5995 110.053 43.8083C110.745 43.9518 111.293 44.2422 111.697 44.6793C112.102 45.1165 112.304 45.6319 112.304 46.2257C112.304 47.2109 111.939 47.9613 111.208 48.4767C110.484 48.9921 109.44 49.2499 108.076 49.2499H103.114ZM105.492 44.7381V47.3708H108.096C109.316 47.3708 109.926 46.9336 109.926 46.0593C109.926 45.1785 109.306 44.7381 108.066 44.7381H105.492ZM105.492 43.0351H107.45C108.8 43.0351 109.476 42.6371 109.476 41.8411C109.476 41.006 108.836 40.5753 107.557 40.5492H105.492V43.0351Z" fill="white"/>
+    <path d="M120.975 38.6603H123.344V49.2499H120.975V42.1837L116.826 49.2499H114.457V38.6603H116.826V45.7266L120.975 38.6603Z" fill="white"/>
+    <path d="M130.224 47.5469C130.818 47.5469 131.31 47.374 131.702 47.0282C132.093 46.6824 132.302 46.255 132.328 45.7461H134.569C134.543 46.4051 134.338 47.0217 133.953 47.5959C133.568 48.1635 133.046 48.6137 132.387 48.9465C131.728 49.2792 131.017 49.4456 130.253 49.4456C128.772 49.4456 127.598 48.966 126.73 48.0069C125.862 47.0478 125.428 45.7233 125.428 44.0334V43.7887C125.428 42.1771 125.859 40.8885 126.72 39.9229C127.582 38.9507 128.756 38.4646 130.244 38.4646C131.503 38.4646 132.527 38.8332 133.317 39.5705C134.113 40.3013 134.53 41.2637 134.569 42.4577H132.328C132.302 41.8509 132.093 41.3518 131.702 40.9603C131.317 40.5688 130.824 40.3731 130.224 40.3731C129.454 40.3731 128.86 40.6536 128.443 41.2147C128.025 41.7693 127.813 42.6143 127.807 43.7496V44.1313C127.807 45.2796 128.012 46.1376 128.423 46.7053C128.841 47.2664 129.441 47.5469 130.224 47.5469Z" fill="white"/>
+    <defs>
+      <linearGradient id="paint0_linear" x1="45.9551" y1="15.5836" x2="21.1896" y2="22.2195" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear" x1="30.474" y1="24.3475" x2="7.59115" y2="30.479" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint2_linear" x1="33.0077" y1="24.7033" x2="40.8682" y2="22.597" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint3_linear" x1="46.5101" y1="41.861" x2="23.6273" y2="47.9924" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint4_linear" x1="38.039" y1="52.8287" x2="15.1561" y2="58.9602" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint5_linear" x1="10.4271" y1="7.47156" x2="2.56661" y2="9.57779" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint6_linear" x1="17.9916" y1="34.7872" x2="10.1311" y2="36.8935" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint7_linear" x1="58.4574" y1="44.9498" x2="50.5969" y2="47.0561" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+</a>      </div>
+      <div class="order-4 order-xl-2 col-auto col-lg-12 col-xl-auto mt-lg-4 ml-auto ml-sm-0 mt-xl-0 m-xl-auto d-flex justify-content-center justify-content-xl-between align-items-center">
+        <nav class="navbar-main">
+  <ul class="navbar-main__group">
+    <li class="navbar-main__item">
+      <a href="index2.html" class="navbar-main__link transition">О нас</a>
+    </li>
+    <li class="navbar-main__item navbar-main__item_dropdown">
+      <a href="#" class="navbar-main__link">Услуги</a>
+      <div class="navbar-main-level">
+        <ul class="navbar-main-level__group">
+          <li class="navbar-main-level__item navbar-main-level__item_active">
+            <a href="#" class="navbar-main-level__link">Стеллажное оборудование</a>
+          </li>
+          <li class="navbar-main-level__item">
+            <a href="#" class="navbar-main-level__link">Производство и установка металлоконструкций</a>
+          </li>
+          <li class="navbar-main-level__item">
+            <a href="#" class="navbar-main-level__link">Производство и монтаж отбойников</a>
+          </li>
+          <li class="navbar-main-level__item">
+            <a href="#" class="navbar-main-level__link">Перегородки</a>
+          </li>
+          <li class="navbar-main-level__item">
+            <a href="#" class="navbar-main-level__link">Разметка склада</a>
+          </li>
+          <li class="navbar-main-level__item">
+            <a href="#" class="navbar-main-level__link">Прочие услуги</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="navbar-main__item">
+      <a href="#" class="navbar-main__link transition">Проекты</a>
+    </li>
+    <li class="navbar-main__item">
+      <a href="#" class="navbar-main__link transition">Оборудование</a>
+    </li>
+    <li class="navbar-main__item navbar-main__item_active">
+      <a href="#" class="navbar-main__link transition">Отзывы</a>
+    </li>
+    <li class="navbar-main__item transition">
+      <a href="#" class="navbar-main__link transition">Контакты</a>
+    </li>
+  </ul>
+</nav>        <div class="header__search">
+          <div class="header__search-form">
+            <form class="search-blum js_search_form">
+  <input type="hidden" name="module" value="search">
+  <input class="search-blum__input" type="text" name="searchword" placeholder="Найти товар или услугу...">
+  <div class="search-blum__buttons search-blum-nav">
+    <div class="search-blum-nav__find">
+      <button type="submit" class="search-btn anime-stroke">
+  <svg width="31" height="32" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.9934 13.081L19.7434 20.581M15.25 8.12499C15.25 12.06 12.06 15.25 8.12499 15.25C4.18997 15.25 1 12.06 1 8.12499C1 4.18997 4.18997 1 8.12499 1C12.06 1 15.25 4.18997 15.25 8.12499Z" stroke="white" stroke-width="2"/>
+  </svg>
+</button>
+    </div>
+    <div class="search-blum-nav__close">
+      <button type="button" class="close anime-stroke">
+  <svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.3667 0.822266L36.722 36.1776M1.3667 36.1784L36.722 0.823067" stroke="white" stroke-width="2"/>
+  </svg>
+</button>
+    </div>
+  </div>
+  
+</form>          </div>
+          <div class="header__search-btn">
+            <button type="button" class="search-btn anime-stroke">
+  <svg width="31" height="32" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.9934 13.081L19.7434 20.581M15.25 8.12499C15.25 12.06 12.06 15.25 8.12499 15.25C4.18997 15.25 1 12.06 1 8.12499C1 4.18997 4.18997 1 8.12499 1C12.06 1 15.25 4.18997 15.25 8.12499Z" stroke="white" stroke-width="2"/>
+  </svg>
+</button>          </div>
+        </div>
+        <div class="header__callback-mobile">
+          <button type="button" class="btn-default btn-default_callback_mini" data-toggle="modal" data-target="#callback">
+    <svg width="25" height="25" viewBox="0 0 65 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M39.8852 65.322L40.4014 65.6643L40.9379 65.3545L48.8171 60.8049L48.317 59.9389L48.8171 60.8049C50.9945 59.5475 53.565 60.2055 54.6003 61.9981L62.6304 75.9068H62.63L63.4964 77.4068L63.4964 77.4069C64.5313 79.1987 63.8164 81.7527 61.6372 83.0116C61.6371 83.0117 61.6371 83.0117 61.637 83.0118L53.4025 87.7656L53.9025 88.6317L53.4025 87.7656C50.3716 89.5156 46.797 89.3278 42.8816 87.7072C38.9588 86.0834 34.8296 83.0697 30.865 79.414C22.9401 72.1067 15.8946 62.4428 12.7493 56.9952L11.8833 57.4952L12.7493 56.9951C9.60463 51.5486 4.7581 40.6151 2.39202 30.098C1.20832 24.8365 0.662903 19.7534 1.21805 15.544C1.77214 11.3427 3.39691 8.15287 6.42808 6.4029C6.42808 6.4029 6.42808 6.40289 6.42809 6.40289L14.6628 1.64893L14.6632 1.6487C16.8408 0.390236 19.4097 1.04631 20.4461 2.84077C20.4461 2.8408 20.4461 2.84083 20.4461 2.84085L29.3422 18.2496L29.3422 18.2497C30.3783 20.0439 29.6622 22.5966 27.4831 23.8544L27.483 23.8545L19.6038 28.4041L19.0675 28.7138L19.1057 29.3318C19.4779 35.3557 22.2118 42.7048 26.0342 49.3247C29.8566 55.9445 34.855 61.9866 39.8852 65.322Z" stroke="#24CBB7" stroke-width="5"/>
+    </svg>
+</button>        </div>
+        <a href="#menu" class="mobile-menu-btn"><span class="mobile-menu-btn__span"></span></a>      </div>
+      <div class="order-2 order-xl-3 d-none d-sm-block col-sm col-xl-auto ml-auto">
+        <div class="header__quick-contacts">
+          <div class="quick-contacts">
+  <a href="tel:+79219434462" class="quick-contacts__link"><span class="quick-contacts__effect_bottom">+7 (921) 943-44-62</span></a>
+  <a href="mailto:info@terminal-service.pro" class="quick-contacts__link"><span class="quick-contacts__effect_bottom">info@terminal-service.pro</span></a>
+</div>        </div>
+      </div>
+      <div class="order-3 order-xl-4 d-none d-md-block col-sm-auto col-lg col-xl-auto col-xxl-2 ml-xl-auto">
+        <div class="header__callback">
+          <button type="button" class="btn-default blow" data-toggle="modal" data-target="#callback">
+    <span></span>
+    <p>Заказать звонок</p>
+</button>        </div>
+      </div>
+    </div>
+  </div>
+</header>  <nav id="mobile-nav" class="mobile-menu">
+    <ul>
+        <div class="nav-content__custom custom-inf" data-nav-custom-content>
+            <div class="custom-inf__search">
+                <form class="search-panel js_search_form">
+  <input type="hidden" name="module" value="search">
+  <input class="search-panel__input" type="text" name="searchword" placeholder="Найти...">
+  <div class="search-panel__buttons search-panel-nav">
+    <div class="search-panel-nav__find">
+      <button type="submit" class="search-btn anime-stroke">
+  <svg width="31" height="32" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.9934 13.081L19.7434 20.581M15.25 8.12499C15.25 12.06 12.06 15.25 8.12499 15.25C4.18997 15.25 1 12.06 1 8.12499C1 4.18997 4.18997 1 8.12499 1C12.06 1 15.25 4.18997 15.25 8.12499Z" stroke="white" stroke-width="2"/>
+  </svg>
+</button>
+    </div>
+  </div>
+</form>
+            </div>
+        </div>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link transition">О компании</a></li>
+        <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">Услуги</a>
+            <ul>
+                <li class="mobile-menu__item">
+                    <a href="#" class="mobile-menu__link">Hosting</a>
+                    <ul>
+                        <li class="mobile-menu__item"><a href="/" class="mobile-menu__link">Private Server</a></li>
+                        <li class="mobile-menu__item"><a href="/" class="mobile-menu__link">Managed Hosting</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Domains</a></li>
+                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Websites</a></li>
+            </ul>
+        </li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Партнеры</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Галерея</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Статьи</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Отзывы</a></li>
+        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Контакты</a></li>
+    
+        <div class="nav-content__custom custom-inf" data-nav-custom-content>
+            <div class="custom-inf__quick-contacts">
+                <div class="quick-contacts">
+  <a href="tel:+79219434462" class="quick-contacts__link"><span class="quick-contacts__effect_bottom">+7 (921) 943-44-62</span></a>
+  <a href="mailto:info@terminal-service.pro" class="quick-contacts__link"><span class="quick-contacts__effect_bottom">info@terminal-service.pro</span></a>
+</div>
+            </div>
+        </div>
+    </ul>
+</nav>  
+  <div class="content">
+    <div class="container">
+  <ul class="breadcrumbs">
+    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Главная</a></li>
+    <li class="breadcrumbs__item">Контакты</li>
+  </ul>
+</div>    <div class="container">
+      <h1>Установка стеллажного оборудования под ключ</h1>
+      
+      <div class="content__services content__services_cat">
+        <div class="services">
+  <div class="columns columns_row_3">
+    <div class="columns__item">
+      <div class="services__cat s-category s-category_mini">
+        <div class="s-category__title">
+          <img src="/resources/static/images/serv1.png" alt="" class="s-category__icon">
+          <a href="#" class="s-category__link">Глубинные стеллажи</a>
+        </div>
+      </div>
+    </div>
+    <div class="columns__item">
+      <div class="services__cat s-category s-category_mini">
+        <div class="s-category__title">
+          <img src="/resources/static/images/serv1.png" alt="" class="s-category__icon">
+          <a href="#" class="s-category__link">Консольные стеллажи</a>
+        </div>
+      </div>
+    </div>
+    <div class="columns__item">
+      <div class="services__cat s-category s-category_mini">
+        <div class="s-category__title">
+          <img src="/resources/static/images/serv1.png" alt="" class="s-category__icon">
+          <a href="#" class="s-category__link">Мезонинные стеллажи</a>
+        </div>
+      </div>
+    </div>
+    <div class="columns__item">
+      <div class="services__cat s-category s-category_mini">
+        <div class="s-category__title">
+          <img src="/resources/static/images/serv1.png" alt="" class="s-category__icon">
+          <a href="#" class="s-category__link">Фронтальные стеллажи</a>
+        </div>
+      </div>
+    </div>
+    <div class="columns__item">
+      <div class="services__cat s-category s-category_mini">
+        <div class="s-category__title">
+          <img src="/resources/static/images/serv1.png" alt="" class="s-category__icon">
+          <a href="#" class="s-category__link">Самонесущие стеллажи</a>
+        </div>
+      </div>
+    </div>
+    <div class="columns__item">
+      <div class="services__cat s-category s-category_mini">
+        <div class="s-category__title">
+          <img src="/resources/static/images/serv1.png" alt="" class="s-category__icon">
+          <a href="#" class="s-category__link">Полочные стеллажи</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+      <p>Установка, монтаж и проектирование систем металлических стеллажей является одной из основных специализаций
+        компании «МК Терминал-Сервис». Мы осуществляем монтаж стеллажного оборудования с 2006 года.
+        <br>
+        Современные складские стеллажи из стали позволяют создать максимально удобное пространство для хранения,
+        перемещения, погрузки и выгрузки любых изделий и товаров. Они могут иметь разные формы и габариты, отличаться
+        деталями. Наша компания предоставляет возможность установить стеллажное оборудование под ключ для разных
+        направлений складской деятельности.</p>
+      
+      <p>Огромное количество стеллажных конструкций, оставляет мало свободного места для передвижения погрузочной
+        спецтехники.
+        Учитывая это, устанавливают складские отбойники, чтобы спецтехника не столкнулась с воротами, колоннами либо
+        стеной.
+        Такие специальные элементы необходимы в определенных местах и надежно защищают складскую технику от повреждений, а
+        стеллажи с грузами − от опрокидываний.</p>
+      
+      <h6 class="subtitle-default subtitle-default_op_6 mt-3">Области применения складских отбойников:</h6>
+      
+      <p>Данные конструкции используют не только в складских помещениях. Отбойники очень востребованы:</p>
+      
+      <ul class="default-list default-list_op_6">
+        <li>на промышленных предприятиях, чтобы обозначить зоны передвижения рабочего персонала;</li>
+        <li>на тротуарах, парковке (как ограничители для проезда авто).</li>
+      </ul>
+      <br>
+      
+      <p>Наша компания предлагает различные отбойники для склада и производственных помещений.</p>
+      
+      <br><br>
+  
+      <h5 class="title-default mb-5">Виды отбойников для складского помещения</h5>
+      
+      <div class="otb-card mb-5">
+        <div class="row">
+          <div class="col-xl-8">
+            <div class="otb-card__title text-primary">1. Прочные отбойники из металла (стали).</div>
+            <div class="otb-card__text">Это наиболее востребованный вид защитных элементов для стеллажей. Они представляют собой изогнутый «щиток» желто-черного цвета, который традиционно устанавливается рядом со стеллажной стойкой. Монтаж такого отбойника производится одновременно со всей стеллажной конструкцией, и крепиться анкерами к полу. Применяется такой элемент защиты в складских помещения с любым температурным режимом. По желанию клиента, устанавливают от одного до нескольких уровней защиты. Единственный минус такого отбойника − демонтаж может осуществить только специалист.</div>
+          </div>
+          <div class="col-xl-4 text-center mt-4 mt-xxl-0">
+            <img src="/resources/static/images/otb-card_1.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+  
+      <div class="otb-card mb-5">
+        <div class="row">
+          <div class="col-xl-8">
+            <div class="otb-card__title text-primary">2. Пластиковые отбойники (из полиэтилена высокого и низкого давления).</div>
+            <div class="otb-card__text">Широко используются для защиты промежуточных стоек (способны выдержать удар до 5 тонн). Отличаются высокой амортизирующей способностью, благодаря чем данные отбойники быстро приобретают первоначальную форму. Покрашены обычно яркой, желтой краской. Крепятся быстро, разными способами: специальным скотчем, ремнями на липучках либо карабинах. Не используют пластиковые защитные отбойники для склада в котором возможны резкие и значительные перепады температур.</div>
+          </div>
+          <div class="col-xl-4 text-center mt-4 mt-xxl-0">
+            <img src="/resources/static/images/otb-card_1.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+  
+      <div class="otb-card mb-5 mb-xxl-0">
+        <div class="row">
+          <div class="col-xl-8">
+            <div class="otb-card__title text-primary">3. Резиновые отбойники.</div>
+            <div class="otb-card__text">Главное предназначение данных отбойников − защита углов стен и колонн. Изготавливают их из резины высокого качества. Отличаются высокой прочностью и износостойкостью. Различаются данные элементы защиты не только по типу использованного материала, но и по размеру. Складские отбойники отличаются высотой, которая в случае столкновения с автопогрузчиком, гарантирует, что удар придется зону бампера.Иногда отбойники для склада оклеивают светоотражающей лентой (удобны в темном складе).</div>
+          </div>
+          <div class="col-xl-4 text-center mt-4 mt-xxl-0">
+            <img src="/resources/static/images/otb-card_1.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  
+    <br><br>
+    
+    <div class="text-center text-uppercase text-active">Наша компания предлагает различные отбойники для склада.</div>
+  
+  </div>
+  
+  <div class="plan plan_sm_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="plan__item plan-card">
+          <div class="plan__item plan-card__number">1</div>
+          <div class="plan__item plan-card__text">Предыдущее месторасположение склада − демонтаж стеллажей и иного оборудования;</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="plan__item plan-card">
+          <div class="plan__item plan-card__number">2</div>
+          <div class="plan__item plan-card__text">Общее количество стеллажных систем, их вид и конструкция: учитывайте число ярусов и линий, полок, опор для паллет, и материала, из которого они изготовлены;</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="plan__item plan-card">
+          <div class="plan__item plan-card__number">3</div>
+          <div class="plan__item plan-card__text">Расположение нового складского помещения и схема монтажа стеллажных конструкций в нем;</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="plan__item plan-card">
+          <div class="plan__item plan-card__number">4</div>
+          <div class="plan__item plan-card__text">Вероятность закрепить стеллажи с помощью анкерных болтов, состояние пола в помещении;</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="plan__item plan-card">
+          <div class="plan__item plan-card__number">5</div>
+          <div class="plan__item plan-card__text">Возможность осуществления работ по переезду в выходные либо нерабочее время.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>  
+  <div class="advantages-s advantages-s_bg">
+  <div class="container">
+    <div class="advantages-s__title">Монтаж стеллажей включает несколько важных этапов:</div>
+    <div class="row">
+      <div class="col-sm-6 col-lg-3">
+        <div class="advantages-s__item advantage-s">
+          <div class="advantage-s__icon"><img src="/resources/static/images/ms-i1.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">Экспертиза помещения склада.</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="advantages-s__item advantage-s">
+          <div class="advantage-s__icon"><img src="/resources/static/images/ms-i2.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">Сборка всех элементов
+            и вертикальных рам конструкции стеллажа и выравнивание рядов.</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="advantages-s__item advantage-s">
+          <div class="advantage-s__icon"><img src="/resources/static/images/ms-i3.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">Крепление к полу, а при необходимости, и к стенам.
+            Установка стеллажей.</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="advantages-s__item advantage-s">
+          <div class="advantage-s__icon"><img src="/resources/static/images/ms-i4.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">Диагностика установленной системы.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+  <div class="text-section text-section_bg">
+  <div class="container">
+    <h5 class="title-default">Особенности демонтажа металлоконструкций</h5>
+    <p>Учитывая, что конструкция может повторно использоваться, следует обеспечить сохранность элементов стеллажной
+      системы по максимуму. Поэтому, наши специалисты осуществляют демонтаж металлоконструкций вручную.</p>
+    <p>Наиболее популярным типом соединения является болтовой, при этом болты обычно подбирают, ориентируясь на класс
+      прочности. Сварные соединения обычно не разбирают, но при необходимости, сделать это реально, прогрев горелкой швы
+      и произведя механическое разъединение частей. Отсоединенные детали отгружают, используя грузоподъемную технику.
+      Широко используют автокраны различных видов с обязательным учетом правил безопасности при выполнении
+      грузоподъемных работ.</p>
+    
+    <h6 class="subtitle-default">Стоимость демонтажа стеллажей</h6>
+  
+    <p>При заказе работ по разборке складского оборудования, стоит учитывать, что стоимость демонтажа
+      металлоконструкций подсчитывается индивидуально в каждом конкретном случае.</p>
+    <p>Цена зависит от вида, сложности и размера оборудования, местонахождения склада, а также с учетом сроков
+      выполнения данных работ.</p>
+  </div>
+</div>  
+  <div class="necessary-services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="necessary-services__info">
+          <div class="necessary-services__title">Глубинные стеллажи</div>
+          <p>Данный вид стеллажей имеет несколько названий: конструкции глубинной загрузки, набивные стеллажи, проходные
+            или оборудование Drive-in. Глубинные стеллажи предназначены для долгого хранения однородных грузов в большом
+            объеме на поддонах. Такие стеллажи не подходят для продуктов с ограниченным сроком хранения и нуждающихся
+            в сортировке.</p>
+          <div class="necessary-services__subtitle">Особенности глубинных стеллажей</div>
+          <p>Применение глубинных стеллажей значительно увеличивает полезную площадь для хранения товаров, однако
+            сокращает площади для передвижения погрузочной техники. Область применения глубинных стеллажей: разные
+            склады, гипермаркеты, складские хозяйства и комплексы, оптовые базы, распределительные логистические
+            центры.</p>
+          <div class="necessary-services__subtitle">Сборно-разборная конструкция глубинных стеллажей изготовлена из
+            сертифицированного металла и включает в себя:
+          </div>
+          <ul class="default-list">
+            <li>Кронштейны и рамы;</li>
+            <li>Межрамные связи;</li>
+            <li>Ложэлементы из оцинкованного профиля;</li>
+            <li>Паллетостопы.</li>
+          </ul>
+          <ol class="default-list-number">
+            <li>Кронштейны и рамы;</li>
+            <li>Межрамные связи;</li>
+            <li>Ложэлементы из оцинкованного профиля;</li>
+            <li>Паллетостопы.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <div class="necessary-services__active-photo">
+          <img src="/resources/static/images/nec_photo_ms.jpg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="advantages-s">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-lg-4">
+        <div class="advantages-s__item advantage-s advantage-s_card">
+          <div class="advantage-s__icon"><img src="/resources/static/images/advan_b1.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">Высокоэффективное использование объема складского помещения.</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="advantages-s__item advantage-s advantage-s_card">
+          <div class="advantage-s__icon"><img src="/resources/static/images/advan_b2.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">компактное размещении товара.</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="advantages-s__item advantage-s advantage-s_card">
+          <div class="advantage-s__icon"><img src="/resources/static/images/advan_b3.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">использование в помещениях высотой до 12 м</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="advantages-s__item advantage-s advantage-s_card">
+          <div class="advantage-s__icon"><img src="/resources/static/images/advan_b4.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">Эксплуатация в диапазоне температур от –30 до +40 °С</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="advantages-s__item advantage-s advantage-s_card">
+          <div class="advantage-s__icon"><img src="/resources/static/images/advan_b5.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">высокая грузонесущая способность</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="advantages-s__item advantage-s advantage-s_card">
+          <div class="advantage-s__icon"><img src="/resources/static/images/advan_b6.png" alt="" class="advantage-s__img"></div>
+          <div class="advantage-s__text">возможность адресации ячеек</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+  
+  
+  
+  
+  <div class="form-static-standard form-static-standard_theme_blue">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 pl-4">
+          <div class="form-static-standard__group">
+            <div class="form-static-standard__title">Оставьте заявку и наш менеджер свяжется с вами</div>
+            <form class="form-default">
+  
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Имя"></div>
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Телефон"></div>
+  
+  <div class="form-default__privacy">
+    Заполняя данную форму, вы соглашаетесь с <a href="/politika-konfidencialnosti/">политикой обработки</a> персональных данных.
+  </div>
+  
+  <div class="form-group form-default__button">
+    <button type="submit" class="btn-default blow">
+    <span></span>
+    <p>Отправить заявку</p>
+</button>
+  </div>
+</form>          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="form-static-standard__map map">
+            <div class="map__yamap" id="map">
+              <div class="preloader-await">
+  <span class="preloader-await__load"></span>
+</div>            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  
+  
+  </div>
+  
+  <footer class="footer">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-auto ml-auto mr-auto">
+          <a href="/" class="logo">
+  <svg class="rand-anim" width="160" height="61" viewBox="0 0 160 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="rand-anim__el" d="M51.7064 58.3055C52.154 59.9762 51.1625 60.968 49.4916 60.5207L33.2182 56.1642C31.5474 55.7169 29.83 53.9999 29.3823 52.3292L17.1133 6.5408C16.6657 4.87007 17.6572 3.87828 19.3281 4.32558L35.6015 8.68212C37.2723 9.12941 38.9897 10.8464 39.4374 12.5171L51.7064 58.3055Z" fill="#013E61"/>
+    <path class="rand-anim__el" d="M42.157 9.79297C43.4936 10.1508 44.8675 11.5244 45.2257 12.861L46.6847 18.3062C47.0428 19.6428 46.2496 20.4362 44.9129 20.0784L21.1587 13.7192C19.822 13.3613 18.4481 11.9877 18.09 10.6512L16.6309 5.20593C16.2728 3.86935 17.066 3.07592 18.4027 3.43375L42.157 9.79297Z" fill="url(#paint0_linear)"/>
+    <path class="rand-anim__el" d="M26.703 18.6578C28.0396 19.0157 29.4135 20.3893 29.7717 21.7258L31.1767 26.9694C31.5348 28.306 30.7415 29.0994 29.4049 28.7416L7.82435 22.9643C6.48768 22.6064 5.11378 21.2328 4.75564 19.8963L3.35064 14.6527C2.9925 13.3161 3.78575 12.5227 5.12242 12.8805L26.703 18.6578Z" fill="url(#paint1_linear)"/>
+    <path class="rand-anim__el" d="M34.077 20.3095C32.7403 19.9516 31.9471 20.7451 32.3052 22.0817L33.7102 27.3252C34.0684 28.6618 35.4423 30.0354 36.7789 30.3932L41.0144 31.5271C42.351 31.8849 43.1443 31.0915 42.7862 29.7549L41.3812 24.5114C41.023 23.1748 39.6491 21.8012 38.3124 21.4433L34.077 20.3095Z" fill="url(#paint2_linear)"/>
+    <path class="rand-anim__el" d="M42.7386 36.171C44.0753 36.5288 45.4492 37.9024 45.8073 39.239L47.2123 44.4826C47.5704 45.8192 46.7772 46.6126 45.4405 46.2548L23.86 40.4775C22.5233 40.1196 21.1494 38.746 20.7913 37.4094L19.3863 32.1659C19.0281 30.8293 19.8214 30.0359 21.1581 30.3937L42.7386 36.171Z" fill="url(#paint3_linear)"/>
+    <path class="rand-anim__el" d="M34.2674 47.139C35.6041 47.4969 36.978 48.8705 37.3361 50.207L38.7411 55.4506C39.0993 56.7872 38.306 57.5806 36.9693 57.2228L15.3888 51.4455C14.0521 51.0876 12.6782 49.714 12.3201 48.3775L10.9151 43.1339C10.557 41.7973 11.3502 41.0039 12.6869 41.3617L34.2674 47.139Z" fill="url(#paint4_linear)"/>
+    <path class="rand-anim__el" d="M6.6557 1.78173C7.99236 2.13956 9.36627 3.51316 9.72441 4.84975L11.1294 10.0933C11.4876 11.4299 10.6943 12.2233 9.35764 11.8655L5.12221 10.7316C3.78554 10.3738 2.41163 9.00018 2.05349 7.6636L0.648489 2.42005C0.290352 1.08346 1.0836 0.290028 2.42027 0.647864L6.6557 1.78173Z" fill="url(#paint5_linear)"/>
+    <path class="rand-anim__el" d="M14.2206 29.0976C15.5573 29.4555 16.9312 30.8291 17.2894 32.1657L18.6944 37.4092C19.0525 38.7458 18.2592 39.5392 16.9226 39.1814L12.6871 38.0475C11.3505 37.6897 9.97657 36.3161 9.61843 34.9795L8.21343 29.736C7.85529 28.3994 8.64855 27.6059 9.98521 27.9638L14.2206 29.0976Z" fill="url(#paint6_linear)"/>
+    <path class="rand-anim__el" d="M54.6865 39.26C56.0231 39.6178 57.397 40.9914 57.7552 42.328L59.1602 47.5716C59.5183 48.9082 58.7251 49.7016 57.3884 49.3437L53.153 48.2099C51.8163 47.8521 50.4424 46.4785 50.0843 45.1419L48.6793 39.8983C48.3211 38.5617 49.1144 37.7683 50.451 38.1261L54.6865 39.26Z" fill="url(#paint7_linear)"/>
+    <path d="M78.304 13.9965H73.8607V26.2499H71.4042V13.9965H67V12H78.304V13.9965Z" fill="white"/>
+    <path d="M83.7358 26.4456C82.2286 26.4456 81.0052 25.9726 80.0656 25.0265C79.1326 24.0739 78.6661 22.8081 78.6661 21.2291V20.9355C78.6661 19.8785 78.8684 18.9357 79.2729 18.1071C79.684 17.2719 80.2581 16.6227 80.9954 16.1595C81.7327 15.6962 82.5548 15.4646 83.4617 15.4646C84.9037 15.4646 86.0161 15.9246 86.7991 16.8446C87.5886 17.7645 87.9833 19.0662 87.9833 20.7496V21.7087H81.0639C81.1357 22.583 81.426 23.2746 81.935 23.7835C82.4504 24.2925 83.0964 24.5469 83.8728 24.5469C84.9624 24.5469 85.8498 24.1065 86.5349 23.2257L87.8169 24.4491C87.3928 25.082 86.8252 25.5746 86.114 25.9269C85.4093 26.2727 84.6166 26.4456 83.7358 26.4456ZM83.4519 17.3731C82.7995 17.3731 82.271 17.6014 81.8665 18.0582C81.4684 18.5149 81.214 19.151 81.1031 19.9666H85.6344V19.7905C85.5823 18.9944 85.3702 18.3942 84.9983 17.9896C84.6264 17.5786 84.1109 17.3731 83.4519 17.3731Z" fill="white"/>
+    <path d="M99.1111 21.0628C99.1111 22.7005 98.7392 24.0086 97.9954 24.9873C97.2516 25.9595 96.2533 26.4456 95.0006 26.4456C93.8392 26.4456 92.9095 26.0639 92.2113 25.3005V30.3213H89.8331V15.6603H92.0254L92.1232 16.7369C92.8214 15.8887 93.7707 15.4646 94.9712 15.4646C96.2631 15.4646 97.2745 15.9474 98.0052 16.9131C98.7425 17.8722 99.1111 19.2065 99.1111 20.916V21.0628ZM96.7427 20.8572C96.7427 19.8002 96.5306 18.9618 96.1065 18.342C95.689 17.7221 95.0887 17.4122 94.3057 17.4122C93.3336 17.4122 92.6354 17.8135 92.2113 18.616V23.3138C92.6419 24.1359 93.3466 24.5469 94.3253 24.5469C95.0822 24.5469 95.6726 24.2435 96.0968 23.6367C96.5274 23.0234 96.7427 22.0969 96.7427 20.8572Z" fill="white"/>
+    <path d="M107.42 23.3236L110.552 15.6603H113.527V26.2499H111.149V19.2424L108.233 26.2499H106.618L103.691 19.2032V26.2499H101.313V15.6603H104.308L107.42 23.3236Z" fill="white"/>
+    <path d="M122.815 15.6603H125.184V26.2499H122.815V19.1837L118.666 26.2499H116.297V15.6603H118.666V22.7266L122.815 15.6603Z" fill="white"/>
+    <path d="M136.683 26.2499H134.305V21.973H130.185V26.2499H127.807V15.6603H130.185V20.0743H134.305V15.6603H136.683V26.2499Z" fill="white"/>
+    <path d="M145.55 26.2499C145.446 26.0476 145.355 25.7181 145.276 25.2614C144.52 26.0509 143.593 26.4456 142.497 26.4456C141.433 26.4456 140.566 26.1422 139.894 25.5354C139.222 24.9286 138.886 24.1783 138.886 23.2844C138.886 22.1556 139.303 21.2911 140.138 20.6909C140.98 20.0841 142.18 19.7807 143.74 19.7807H145.198V19.0858C145.198 18.5377 145.045 18.1006 144.738 17.7743C144.431 17.4416 143.965 17.2752 143.339 17.2752C142.797 17.2752 142.353 17.4122 142.008 17.6862C141.662 17.9538 141.489 18.2963 141.489 18.7139H139.111C139.111 18.1332 139.303 17.5916 139.688 17.0892C140.073 16.5803 140.595 16.1823 141.254 15.8952C141.919 15.6081 142.66 15.4646 143.476 15.4646C144.715 15.4646 145.704 15.7778 146.441 16.4042C147.178 17.024 147.557 17.8983 147.576 19.0271V23.8031C147.576 24.7557 147.71 25.5158 147.978 26.0835V26.2499H145.55ZM142.937 24.5371C143.407 24.5371 143.848 24.423 144.259 24.1946C144.676 23.9662 144.989 23.6596 145.198 23.2746V21.2781H143.916C143.035 21.2781 142.373 21.4314 141.929 21.7381C141.486 22.0447 141.264 22.4786 141.264 23.0397C141.264 23.4965 141.414 23.8618 141.714 24.1359C142.021 24.4034 142.428 24.5371 142.937 24.5371Z" fill="white"/>
+    <path d="M159.066 15.6603V26.2499H156.688V17.5786H153.693L153.498 21.2683C153.374 23.043 153.031 24.3186 152.47 25.095C151.915 25.8649 151.064 26.2499 149.915 26.2499H149.181L149.172 24.2729L149.661 24.224C150.183 24.1522 150.561 23.8357 150.796 23.2746C151.038 22.707 151.191 21.6761 151.256 20.1819L151.452 15.6603H159.066Z" fill="white"/>
+    <path d="M78.8814 44.6108C78.7379 46.1311 78.1768 47.3186 77.1981 48.1733C76.2194 49.0215 74.9177 49.4456 73.293 49.4456C72.1577 49.4456 71.1562 49.1781 70.2884 48.6431C69.4272 48.1015 68.7617 47.3349 68.2919 46.3431C67.8221 45.3514 67.5774 44.1998 67.5579 42.8883V41.5573C67.5579 40.2132 67.796 39.029 68.2723 38.0046C68.7486 36.9802 69.4304 36.1908 70.3178 35.6362C71.2117 35.0816 72.2426 34.8043 73.4105 34.8043C74.9829 34.8043 76.2487 35.2316 77.2078 36.0864C78.167 36.9411 78.7248 38.1482 78.8814 39.7075H76.4151C76.2976 38.6832 75.9975 37.9459 75.5147 37.4957C75.0384 37.039 74.337 36.8106 73.4105 36.8106C72.3339 36.8106 71.5053 37.2053 70.9246 37.9948C70.3504 38.7778 70.0568 39.9294 70.0438 41.4496V42.7122C70.0438 44.252 70.3178 45.4264 70.8659 46.2355C71.4205 47.0445 72.2295 47.4491 73.293 47.4491C74.2652 47.4491 74.996 47.2305 75.4853 46.7933C75.9747 46.3562 76.2846 45.6287 76.4151 44.6108H78.8814Z" fill="white"/>
+    <path d="M85.5366 49.4456C84.0294 49.4456 82.806 48.9726 81.8665 48.0265C80.9334 47.0739 80.4669 45.8081 80.4669 44.2291V43.9355C80.4669 42.8785 80.6692 41.9357 81.0737 41.1071C81.4848 40.2719 82.0589 39.6227 82.7962 39.1595C83.5335 38.6962 84.3556 38.4646 85.2625 38.4646C86.7045 38.4646 87.8169 38.9246 88.5999 39.8446C89.3894 40.7645 89.7841 42.0662 89.7841 43.7496V44.7087H82.8647C82.9365 45.583 83.2268 46.2746 83.7358 46.7835C84.2512 47.2925 84.8972 47.5469 85.6736 47.5469C86.7632 47.5469 87.6506 47.1065 88.3357 46.2257L89.6178 47.4491C89.1937 48.082 88.626 48.5746 87.9148 48.9269C87.2102 49.2727 86.4174 49.4456 85.5366 49.4456ZM85.2528 40.3731C84.6003 40.3731 84.0718 40.6014 83.6673 41.0582C83.2693 41.5149 83.0148 42.151 82.9039 42.9666H87.4353V42.7905C87.3831 41.9944 87.171 41.3942 86.7991 40.9896C86.4272 40.5786 85.9117 40.3731 85.2528 40.3731Z" fill="white"/>
+    <path d="M100.912 44.0628C100.912 45.7005 100.54 47.0087 99.7962 47.9874C99.0524 48.9595 98.0541 49.4456 96.8014 49.4456C95.64 49.4456 94.7103 49.0639 94.0121 48.3005V53.3213H91.6339V38.6603H93.8262L93.924 39.7369C94.6222 38.8887 95.5715 38.4646 96.7721 38.4646C98.0639 38.4646 99.0753 38.9474 99.806 39.9131C100.543 40.8722 100.912 42.2065 100.912 43.916V44.0628ZM98.5435 43.8572C98.5435 42.8002 98.3314 41.9618 97.9073 41.342C97.4898 40.7221 96.8895 40.4122 96.1065 40.4122C95.1344 40.4122 94.4362 40.8135 94.0121 41.616V46.3138C94.4427 47.1359 95.1474 47.5469 96.1261 47.5469C96.883 47.5469 97.4735 47.2435 97.8976 46.6367C98.3282 46.0234 98.5435 45.0969 98.5435 43.8572Z" fill="white"/>
+    <path d="M103.114 49.2499V38.6603H107.411C108.859 38.6603 109.962 38.9148 110.719 39.4237C111.475 39.9261 111.854 40.6504 111.854 41.5964C111.854 42.0858 111.7 42.5262 111.394 42.9177C111.094 43.3026 110.647 43.5995 110.053 43.8083C110.745 43.9518 111.293 44.2422 111.697 44.6793C112.102 45.1165 112.304 45.6319 112.304 46.2257C112.304 47.2109 111.939 47.9613 111.208 48.4767C110.484 48.9921 109.44 49.2499 108.076 49.2499H103.114ZM105.492 44.7381V47.3708H108.096C109.316 47.3708 109.926 46.9336 109.926 46.0593C109.926 45.1785 109.306 44.7381 108.066 44.7381H105.492ZM105.492 43.0351H107.45C108.8 43.0351 109.476 42.6371 109.476 41.8411C109.476 41.006 108.836 40.5753 107.557 40.5492H105.492V43.0351Z" fill="white"/>
+    <path d="M120.975 38.6603H123.344V49.2499H120.975V42.1837L116.826 49.2499H114.457V38.6603H116.826V45.7266L120.975 38.6603Z" fill="white"/>
+    <path d="M130.224 47.5469C130.818 47.5469 131.31 47.374 131.702 47.0282C132.093 46.6824 132.302 46.255 132.328 45.7461H134.569C134.543 46.4051 134.338 47.0217 133.953 47.5959C133.568 48.1635 133.046 48.6137 132.387 48.9465C131.728 49.2792 131.017 49.4456 130.253 49.4456C128.772 49.4456 127.598 48.966 126.73 48.0069C125.862 47.0478 125.428 45.7233 125.428 44.0334V43.7887C125.428 42.1771 125.859 40.8885 126.72 39.9229C127.582 38.9507 128.756 38.4646 130.244 38.4646C131.503 38.4646 132.527 38.8332 133.317 39.5705C134.113 40.3013 134.53 41.2637 134.569 42.4577H132.328C132.302 41.8509 132.093 41.3518 131.702 40.9603C131.317 40.5688 130.824 40.3731 130.224 40.3731C129.454 40.3731 128.86 40.6536 128.443 41.2147C128.025 41.7693 127.813 42.6143 127.807 43.7496V44.1313C127.807 45.2796 128.012 46.1376 128.423 46.7053C128.841 47.2664 129.441 47.5469 130.224 47.5469Z" fill="white"/>
+    <defs>
+      <linearGradient id="paint0_linear" x1="45.9551" y1="15.5836" x2="21.1896" y2="22.2195" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear" x1="30.474" y1="24.3475" x2="7.59115" y2="30.479" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint2_linear" x1="33.0077" y1="24.7033" x2="40.8682" y2="22.597" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint3_linear" x1="46.5101" y1="41.861" x2="23.6273" y2="47.9924" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint4_linear" x1="38.039" y1="52.8287" x2="15.1561" y2="58.9602" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint5_linear" x1="10.4271" y1="7.47156" x2="2.56661" y2="9.57779" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint6_linear" x1="17.9916" y1="34.7872" x2="10.1311" y2="36.8935" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+      <linearGradient id="paint7_linear" x1="58.4574" y1="44.9498" x2="50.5969" y2="47.0561" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#499ECE"/>
+        <stop offset="1" stop-color="#003D60"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+</a>          <div class="footer__privacy privacy">
+              <a href="#" class="privacy__link">Политика конфидециальности</a>
+          </div>
+          <div class="footer__copyright">МК Терминал сервис 2020 ©</div>
+      </div>
+      <div class="d-none d-lg-block col-lg-auto">
+        <div class="footer__nav">
+          <nav class="navbar-footer">
+  <ul class="navbar-footer__group">
+    <li class="navbar-footer__item">
+      <a href="#" class="navbar-footer__link transition">О нас</a>
+    </li>
+    <li class="navbar-footer__item">
+      <a href="#" class="navbar-footer__link transition">Услуги</a>
+    </li>
+    <li class="navbar-footer__item">
+      <a href="#" class="navbar-footer__link transition">Проекты</a>
+    </li>
+    <li class="navbar-footer__item">
+      <a href="#" class="navbar-footer__link transition">Оборудование</a>
+    </li>
+    <li class="navbar-footer__item navbar-footer__item_active">
+      <a href="#" class="navbar-footer__link transition">Отзывы</a>
+    </li>
+    <li class="navbar-footer__item">
+      <a href="#" class="navbar-footer__link transition">Контакты</a>
+    </li>
+  </ul>
+</nav>        </div>
+      </div>
+      <div class="d-none d-sm-block col-auto ml-auto mr-auto">
+        <div class="footer__quick-contacts">
+          <div class="quick-contacts">
+  <a href="tel:+79219434462" class="quick-contacts__link"><span class="quick-contacts__effect_bottom">+7 (921) 943-44-62</span></a>
+  <a href="mailto:info@terminal-service.pro" class="quick-contacts__link"><span class="quick-contacts__effect_bottom">info@terminal-service.pro</span></a>
+</div>        </div>
+        <div class="footer__cosial">
+          <div class="cosial">
+            <a href="#" class="cosial__item" target="_blank">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.426 5.94735C13.9435 6.45257 14.4897 6.92791 14.9538 7.48408C15.1588 7.73123 15.3529 7.98627 15.5014 8.2731C15.7118 8.68083 15.5212 9.12952 15.1556 9.15387L12.883 9.15284C12.2968 9.20148 11.8292 8.9655 11.436 8.56474C11.1214 8.24424 10.83 7.90314 10.5274 7.57183C10.4034 7.43641 10.2736 7.30899 10.1185 7.20827C9.80823 7.00689 9.53894 7.06855 9.36165 7.39213C9.18108 7.72123 9.14012 8.08566 9.12239 8.45244C9.09804 8.9876 8.93628 9.12829 8.39872 9.15279C7.24989 9.20697 6.15959 9.03316 5.14674 8.45362C4.25377 7.94271 3.56131 7.22145 2.9586 6.4049C1.78512 4.81491 0.886463 3.06778 0.0787853 1.2717C-0.103017 0.867038 0.0299392 0.649819 0.476422 0.64213C1.21783 0.627728 1.95913 0.628753 2.70141 0.641105C3.00274 0.645513 3.20222 0.818345 3.31857 1.10302C3.71969 2.08932 4.21051 3.0277 4.8266 3.8975C4.99066 4.12907 5.15796 4.36064 5.39619 4.52363C5.65975 4.7041 5.86041 4.64429 5.9844 4.3507C6.06307 4.16454 6.09752 3.96403 6.11525 3.76464C6.17399 3.0787 6.18173 2.39393 6.07871 1.71039C6.01546 1.28379 5.77518 1.00763 5.3495 0.926904C5.13228 0.885746 5.16462 0.804917 5.2698 0.680931C5.45247 0.467094 5.62428 0.333984 5.96677 0.333984H8.53521C8.93956 0.413789 9.02936 0.595437 9.08472 1.0023L9.08692 3.85531C9.08251 4.01282 9.1656 4.48022 9.44929 4.58447C9.67635 4.65869 9.82602 4.47704 9.96225 4.33306C10.5772 3.68038 11.0161 2.90904 11.4082 2.11033C11.5822 1.75913 11.7318 1.3944 11.8768 1.02998C11.9843 0.759556 12.1528 0.626497 12.4575 0.632392L14.9294 0.634596C15.0027 0.634596 15.0769 0.635672 15.1479 0.64782C15.5644 0.718808 15.6786 0.897996 15.5499 1.30476C15.3472 1.94293 14.9528 2.47476 14.5672 3.00904C14.1549 3.57946 13.714 4.13035 13.3052 4.70415C12.9296 5.22813 12.9594 5.49225 13.426 5.94735Z" fill="white"/>
+              </svg>
+            </a>
+            <a href="#" class="cosial__item" target="_blank">
+              <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.3182 0.00360649L7.07045 0C4.54519 0 2.91325 1.67431 2.91325 4.26576V6.23256H0.653241C0.45795 6.23256 0.299805 6.39088 0.299805 6.58617V9.43584C0.299805 9.63113 0.45813 9.78928 0.653241 9.78928H2.91325V16.9799C2.91325 17.1752 3.07139 17.3333 3.26669 17.3333H6.21535C6.41064 17.3333 6.56879 17.175 6.56879 16.9799V9.78928H9.21127C9.40656 9.78928 9.5647 9.63113 9.5647 9.43584L9.56578 6.58617C9.56578 6.4924 9.52846 6.4026 9.46228 6.33624C9.3961 6.26988 9.30594 6.23256 9.21217 6.23256H6.56879V4.56528C6.56879 3.76391 6.75975 3.3571 7.80365 3.3571L9.31784 3.35656C9.51295 3.35656 9.67109 3.19824 9.67109 3.00312V0.357043C9.67109 0.162112 9.51313 0.00396714 9.3182 0.00360649Z" fill="white"/>
+              </svg>
+            </a>
+            <a href="#" class="cosial__item" target="_blank">
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.1249 0.866211H5.2749C2.58293 0.866211 0.399902 3.04924 0.399902 5.74121V11.5912C0.399902 14.2832 2.58293 16.4662 5.2749 16.4662H11.1249C13.8169 16.4662 15.9999 14.2832 15.9999 11.5912V5.74121C15.9999 3.04924 13.8169 0.866211 11.1249 0.866211ZM14.5374 11.5912C14.5374 13.473 13.0067 15.0037 11.1249 15.0037H5.2749C3.39315 15.0037 1.8624 13.473 1.8624 11.5912V5.74121C1.8624 3.85946 3.39315 2.32871 5.2749 2.32871H11.1249C13.0067 2.32871 14.5374 3.85946 14.5374 5.74121V11.5912Z" fill="white"/>
+                <path d="M8.1999 4.76621C6.04613 4.76621 4.2999 6.51244 4.2999 8.66621C4.2999 10.82 6.04613 12.5662 8.1999 12.5662C10.3537 12.5662 12.0999 10.82 12.0999 8.66621C12.0999 6.51244 10.3537 4.76621 8.1999 4.76621ZM8.1999 11.1037C6.85635 11.1037 5.7624 10.0098 5.7624 8.66621C5.7624 7.32169 6.85635 6.22871 8.1999 6.22871C9.54345 6.22871 10.6374 7.32169 10.6374 8.66621C10.6374 10.0098 9.54345 11.1037 8.1999 11.1037Z" fill="white"/>
+                <path d="M12.3926 4.99337C12.6797 4.99337 12.9123 4.76071 12.9123 4.4737C12.9123 4.18669 12.6797 3.95403 12.3926 3.95403C12.1056 3.95403 11.873 4.18669 11.873 4.4737C11.873 4.76071 12.1056 4.99337 12.3926 4.99337Z" fill="white"/>
+              </svg>
+            </a>
+            <a href="#" class="cosial__item" target="_blank">
+              <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.3002 2.34135C15.7201 2.59582 15.1019 2.7645 14.4574 2.8464C15.1204 2.45055 15.6265 1.8285 15.8644 1.07872C15.2462 1.44727 14.5637 1.7076 13.8364 1.85287C13.2494 1.2279 12.4129 0.84082 11.5003 0.84082C9.72967 0.84082 8.30422 2.27797 8.30422 4.0398C8.30422 4.2933 8.32567 4.53705 8.37832 4.7691C5.7195 4.63942 3.36682 3.3651 1.78635 1.42387C1.51042 1.9026 1.34857 2.45055 1.34857 3.04042C1.34857 4.14802 1.91895 5.12985 2.76915 5.69827C2.25532 5.68852 1.75125 5.53935 1.3242 5.30437C1.3242 5.31412 1.3242 5.3268 1.3242 5.33947C1.3242 6.89362 2.43277 8.18452 3.8865 8.4819C3.62617 8.55307 3.34245 8.5872 3.048 8.5872C2.84325 8.5872 2.63655 8.5755 2.44252 8.5326C2.8569 9.79912 4.03275 10.7302 5.4309 10.7605C4.3428 11.6116 2.96122 12.1245 1.46557 12.1245C1.2033 12.1245 0.951745 12.1128 0.700195 12.0806C2.11687 12.9942 3.79582 13.5158 5.6064 13.5158C11.4915 13.5158 14.709 8.64082 14.709 4.41517C14.709 4.2738 14.7041 4.1373 14.6973 4.00177C15.332 3.55132 15.8653 2.98875 16.3002 2.34135Z" fill="white"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="d-none d-sm-flex col-auto flex-column flex-sm-row flex-md-column flex-lg-row flex-xl-column flex-xxl-row mt-4 mt-md-0 mt-lg-4 mt-xl-0 ml-auto mr-auto ml-md-0 mr-md-0 ml-lg-auto mr-lg-auto">
+        <div class="footer__search">
+          <form class="search-panel js_search_form">
+  <input type="hidden" name="module" value="search">
+  <input class="search-panel__input" type="text" name="searchword" placeholder="Найти...">
+  <div class="search-panel__buttons search-panel-nav">
+    <div class="search-panel-nav__find">
+      <button type="submit" class="search-btn anime-stroke">
+  <svg width="31" height="32" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.9934 13.081L19.7434 20.581M15.25 8.12499C15.25 12.06 12.06 15.25 8.12499 15.25C4.18997 15.25 1 12.06 1 8.12499C1 4.18997 4.18997 1 8.12499 1C12.06 1 15.25 4.18997 15.25 8.12499Z" stroke="white" stroke-width="2"/>
+  </svg>
+</button>
+    </div>
+  </div>
+</form>        </div>
+        <div class="footer__callback">
+          <button type="button" class="btn-default blow" data-toggle="modal" data-target="#callback">
+    <span></span>
+    <p>Заказать звонок</p>
+</button>        </div>
+      </div>
+    </div>
+  </div>
+</footer>  
+<div class="modal modal-default fade" id="callback" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-default__content">
+      <div class="modal-header modal-default__header">
+        <h5 class="modal-title modal-default__title">Заказать звонок</h5>
+        <div class="modal-default__close">
+          <button type="button" class="close anime-stroke" data-dismiss="modal">
+  <svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.3667 0.822266L36.722 36.1776M1.3667 36.1784L36.722 0.823067" stroke="white" stroke-width="2"/>
+  </svg>
+</button>
+        </div>
+      </div>
+      <div class="modal-body modal-default__body">
+        <form class="form-default test">
+  
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Имя"></div>
+                        <div class="form-group form-default__group"><input type="text" class="form-control form-default__input" placeholder="Телефон"></div>
+  
+  <div class="form-default__privacy">
+    Заполняя данную форму, вы соглашаетесь с <a href="/politika-konfidencialnosti/">политикой обработки</a> персональных данных.
+  </div>
+  
+  <div class="form-group form-default__button">
+    <button type="submit" class="btn-default blow">
+    <span></span>
+    <p>Отправить заявку</p>
+</button>
+  </div>
+</form>
+      </div>
+    </div>
+  </div>
+</div></main>
+</body>
+</html>

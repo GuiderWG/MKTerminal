@@ -1,0 +1,22 @@
+.text-section {
+  padding: 55px 0 30px;
+
+  &_bg {
+    background-size: cover;
+  }
+
+  .title-default {
+    padding-bottom: 25px;
+  }
+
+  .subtitle-default {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    @include whiteOpacity(.8);
+  }
+
+  p {
+    @include whiteOpacity(.6);
+  }
+
+}

@@ -1,31 +1,30 @@
 export default $(document).ready(() => {
-
   // Do something when happened scroll
-  $(window).scroll(function() {
-    $('.top-menu').removeClass('fixed-top');
-    let header = $('.header');
+  $(window)
+    .scroll(function () {
+      $('.top-menu').removeClass('fixed-top');
+      let header = $('.header');
 
-    if ($(this).scrollTop() > 0) {
-      header.addClass('header_responsive');
-    } else {
-      header.removeClass('header_responsive');
-    }
-
-  }).scroll();
+      if ($(this).scrollTop() > 0) {
+        header.addClass('header_responsive');
+      } else {
+        header.removeClass('header_responsive');
+      }
+    })
+    .scroll();
   /*---*/
 
   $('#fullpage').fullpage({
-    anchors: [ 'otdely', 'napravleniya', 'preimushchestva', 'keysy', 'partnery', 'media', 'kontakty' ],
+    anchors: ['otdely', 'napravleniya', 'preimushchestva', 'keysy', 'partnery', 'media', 'kontakty'],
     navigation: true,
     navigationPosition: 'left',
-    navigationTooltips: [ 'Просто и надёжно', 'Почему мы', 'О компании', 'Наши работы', 'Оставить заявку', 'Георгафия' ],
+    navigationTooltips: ['Просто и надёжно', 'Почему мы', 'О компании', 'Наши работы', 'Оставить заявку', 'Георгафия'],
     showActiveTooltip: false,
     responsiveWidth: 992,
     responsiveHeight: 920,
     verticalCentered: false,
     css3: true,
-    onLeave: function(index, nextIndex, direction) {
-
+    onLeave: function (index, nextIndex, direction) {
       if (direction === 'down' && window.innerWidth > 767) {
         switch (index) {
           case 1:
@@ -49,20 +48,12 @@ export default $(document).ready(() => {
 
   /* TOP MENU DROPDOWN 2LVL */
   $('.navbar-main__item_dropdown').hover(
-    function() {
-      $(this)
-        .addClass('navbar-main__item_dropdown_open')
-        .find('.navbar-main-level')
-        .stop()
-        .fadeIn('10');
+    function () {
+      $(this).addClass('navbar-main__item_dropdown_open').find('.navbar-main-level').stop().fadeIn('10');
     },
-    function() {
-      $(this)
-        .removeClass('navbar-main__item_dropdown_open')
-        .find('.navbar-main-level')
-        .stop()
-        .fadeOut('10');
-    },
+    function () {
+      $(this).removeClass('navbar-main__item_dropdown_open').find('.navbar-main-level').stop().fadeOut('10');
+    }
   );
   /*---*/
 
@@ -77,7 +68,6 @@ export default $(document).ready(() => {
   });
   /* END Mobile menu */
 
-
   if ($.fn.slick) {
     /* Main slick slider */
     let mainSlider = $('.main-slider');
@@ -87,14 +77,11 @@ export default $(document).ready(() => {
       adaptiveHeight: true,
       dots: true,
       dotsClass: 'main-slider__dots main-dots',
-      customPaging: function(_, i) {
+      customPaging: function (_, i) {
         return `<button type="button" class="main-dots__item">${++i}</button>`;
       },
       appendDots: '.container-dots',
     });
     /* END Main slick slider */
-
-
   }
-
 });

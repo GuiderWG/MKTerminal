@@ -120,9 +120,27 @@ __webpack_require__.r(__webpack_exports__);
     verticalCentered: false,
     css3: true,
     onLeave: function onLeave(index, nextIndex, direction) {
-      //after leaving section 1
-      if (index === 1 && direction === 'down' && window.innerWidth > 767) {
-        iconsPattern();
+      if (direction === 'down' && window.innerWidth > 767) {
+        switch (index) {
+          case 1:
+            iconsPattern();
+
+          case 2:
+            rightSide();
+            break;
+
+          case 3:
+            downSide();
+            break;
+
+          case 4:
+            onlyPattern('.feedback-us');
+            break;
+
+          case 5:
+            mapDots();
+            break;
+        }
       }
     }
   });
@@ -176,9 +194,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _jQueryScripts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./jQueryScripts */ "./resources/js/jQueryScripts.js");
-/* harmony import */ var _vanillaJS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vanillaJS */ "./resources/js/vanillaJS.js");
-//jQuery code
+/* harmony import */ var _vanillaJS__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vanillaJS */ "./resources/js/vanillaJS.js");
+/* harmony import */ var _jQueryScripts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./jQueryScripts */ "./resources/js/jQueryScripts.js");
+
+Object(_vanillaJS__WEBPACK_IMPORTED_MODULE_0__["preloaderAnimation"])(); //jQuery code
+
  // Vanilla JS code
 
 
@@ -189,13 +209,183 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./resources/js/vanillaJS.js ***!
   \***********************************/
-/*! exports provided: default */
+/*! exports provided: preloaderAnimation, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "preloaderAnimation", function() { return preloaderAnimation; });
+function preloaderAnimation() {
+  var preloaderStart = document.getElementById('preloader-container');
+  var preloader = document.querySelectorAll('.preloader__container');
+  var preloaderBar = document.querySelectorAll('.preloader-load .preloader-load__bar');
+  var preloaderBarEmpty = document.querySelectorAll('.preloader-load .preloader-load__bar_empty');
+  var preloaderIcon = document.querySelectorAll('.preloader-load .preloader-load__icon');
+  var preloaderLetter = document.querySelectorAll('.preloader__title .letter');
+  var preloaderCluster = document.querySelectorAll('.preloader-bg .preloader-bg__cluster');
+
+  if (preloaderStart) {
+    var startPreloader = function startPreloader() {
+      preloaderStart.classList.add('preloader__container_show');
+      anime.timeline({
+        easing: 'spring(1, 40, 10, 0)',
+        duration: 1600
+      }).add({
+        targets: preloaderBarEmpty,
+        opacity: [0, 1]
+      }, 500).add({
+        targets: preloaderLetter,
+        //opacity: 1,
+        //translateY: -50,
+        delay: anime.stagger(110, {
+          start: 1000
+        }),
+        translateX: [-10, 0],
+        opacity: [0, 1]
+      }, 500).add({
+        targets: preloaderCluster,
+        opacity: 1,
+        easing: 'spring(1, 30, 10, 0)',
+        delay: anime.stagger(100, {
+          start: 1000
+        }),
+        translateY: ['100%', 0]
+      }, 500).add({
+        targets: preloaderBar,
+        width: [{
+          value: '10%',
+          duration: 400
+        }, {
+          value: '30%',
+          duration: 400,
+          delay: 500
+        }, {
+          value: '60%',
+          duration: 400,
+          delay: 500
+        }, {
+          value: '100%',
+          duration: 400,
+          delay: 500
+        }],
+        direction: 'alternate',
+        easing: 'spring(1, 40, 10, 0)',
+        delay: function delay(el, i) {
+          return i * 300;
+        },
+        endDelay: function endDelay(el, i, l) {
+          return (l - i) * 300;
+        }
+      }, 500);
+      anime({
+        targets: preloaderIcon,
+        opacity: [0, 1],
+        translateX: [{
+          value: '-30%',
+          duration: 1500
+        }, {
+          value: '30%',
+          duration: 1500,
+          delay: 500
+        }, {
+          value: '80%',
+          duration: 1500,
+          delay: 500
+        }, {
+          value: '100%',
+          duration: 1500,
+          delay: 500
+        }],
+        direction: 'alternate',
+        loop: true,
+        easing: 'spring(1, 40, 10, 0)',
+        delay: function delay(el, i, l) {
+          return i * 200;
+        },
+        endDelay: function endDelay(el, i, l) {
+          return (l - i) * 200;
+        }
+      });
+    };
+
+    var fadeOutPreloader = function fadeOutPreloader(el) {
+      document.body.classList.remove('preloader');
+      setTimeout(function () {
+        anime.timeline({
+          easing: 'easeOutSine',
+          duration: 600
+        }).add({
+          targets: preloader,
+          height: ['100%', '0%'],
+          top: ['50%']
+        }, 200).add({
+          complete: function complete(anim) {
+            preloaderStart.classList.remove('preloader__container_show');
+          }
+        }, 300);
+      }, 1000);
+    };
+
+    document.body.classList.add('preloader');
+    startPreloader();
+
+    window.onload = function () {
+      setTimeout(function () {
+        fadeOutPreloader(preloaderStart);
+        logoPattern();
+      }, 2000);
+    };
+  }
+}
 /* harmony default export */ __webpack_exports__["default"] = (document.addEventListener('DOMContentLoaded', function () {
+  /*YANDEX MAP*/
+  (function () {
+    var ymap = document.getElementById('map');
+
+    if (ymap) {
+      var init = function init(ymaps) {
+        var myMap = new ymaps.Map('map', {
+          center: [59.94870806413625, 30.25951650000001],
+          controls: [],
+          zoom: 17,
+          behaviors: ['default', 'scrollZoom']
+        }),
+            myPlacemark = new ymaps.Placemark([59.94870806413625, 30.25951650000001], {
+          hintContent: 'МК Терминал сервис',
+          iconCaption: 'МК Терминал сервис',
+          balloonContent: [// '<img style="width:100px;float:left;margin:20px 20px 20px 0;" alt="" src="../images/logo.png">' +
+          '<address>', '<strong>МК Терминал сервис</strong>', '<br/>', 'Адрес: г. Санкт-Петербург, Набережная реки Смоленки, 19-21', '</address>'].join('')
+        }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: '/resources/static/images/location-pin.svg',
+          // Размеры метки.
+          iconImageSize: [35, 45],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-30, -32]
+        }),
+            myCollection = new ymaps.GeoObjectCollection();
+        myCollection.add(myPlacemark);
+        var myBalloonLayout = ymaps.templateLayoutFactory.createClass('<p><strong>$[properties.name]</strong></p>' + '<p><strong>Адрес:</strong> $[properties.address]</p>');
+        ymaps.layout.storage.add('my#xpertlayout', myBalloonLayout);
+        myCollection.options.set({
+          balloonContentBodyLayout: 'my#xpertlayout',
+          balloonMaxWidth: 500
+        });
+        myMap.geoObjects.add(myCollection);
+      };
+
+      ymaps.ready(init);
+    }
+  })();
+  /*--YANDEX MAP*/
+
   /*Поиск в шапке*/
+
+
   (function () {
     var showSearchBtn = document.querySelector('.header__search-btn');
     var searchForm = document.querySelector('.header__search-form');
@@ -235,6 +425,40 @@ __webpack_require__.r(__webpack_exports__);
   })();
   /*--Поиск в шапке*/
 
+
+  (function () {
+    var container = document.querySelector('.block-pattern');
+
+    if (container) {
+      var animateBlocks = function animateBlocks() {
+        anime({
+          targets: '.block-pattern__element',
+          opacity: 1,
+          translateX: function translateX() {
+            return anime.random(-1980, 1980);
+          },
+          translateY: function translateY() {
+            return anime.random(-500, 500);
+          },
+          scale: function scale() {
+            return anime.random(1, 5);
+          },
+          easing: 'linear',
+          duration: 3000,
+          delay: anime.stagger(10),
+          complete: animateBlocks
+        });
+      };
+
+      for (var i = 0; i <= 50; i++) {
+        var blocks = document.createElement('div');
+        blocks.classList.add('block-pattern__element');
+        container.appendChild(blocks);
+      }
+
+      animateBlocks();
+    }
+  })();
   /*Отрисовка SVG иконок*/
 
 
@@ -308,7 +532,7 @@ __webpack_require__.r(__webpack_exports__);
         anime({
           targets: gitPatternPath,
           fillOpacity: function fillOpacity() {
-            return anime.random(.3, .6);
+            return anime.random(0.3, 0.6);
           },
           translateX: function translateX() {
             return anime.random(-1, 3);
@@ -325,14 +549,14 @@ __webpack_require__.r(__webpack_exports__);
       }).add({
         targets: gitPatternPath,
         opacity: [0, 1],
-        fillOpacity: [0, .4],
+        fillOpacity: [0, 0.4],
         delay: function delay(el, i) {
-          return i * 100;
+          return i * 50;
         },
         endDelay: function endDelay(el, i, l) {
-          return (l - i) * 100;
+          return (l - i) * 50;
         }
-      }, 100).add({
+      }, 50).add({
         begin: randomValuesOpTran
       });
     },
@@ -367,11 +591,95 @@ __webpack_require__.r(__webpack_exports__);
         },
         duration: 800
       }, 1000);
+    },
+    onlyPattern: function onlyPattern(parentClass) {
+      var bigPatternEl = document.querySelectorAll("".concat(parentClass, " .big-pattern svg line, ").concat(parentClass, " .big-pattern svg rect, ").concat(parentClass, " .big-pattern svg path"));
+      anime.timeline({
+        duration: 950,
+        delay: function delay(el, i) {
+          return i * 300;
+        },
+        easing: 'easeInOutQuad'
+      }).add({
+        targets: bigPatternEl,
+        opacity: [0, 1],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        delay: function delay(el, i) {
+          return i * 50;
+        },
+        duration: 800
+      }, 100);
+    },
+    rightSide: function rightSide() {
+      var rightSide = document.querySelectorAll('.right-side');
+      anime.timeline({
+        duration: 950,
+        delay: function delay(el, i) {
+          return i * 300;
+        },
+        easing: 'easeInOutQuad'
+      }).add({
+        targets: rightSide,
+        translateX: [999, 0],
+        easing: 'spring(1, 60, 10, 0)'
+      }, 100);
+    },
+    downSide: function downSide() {
+      var downSide = document.querySelectorAll('.down-side');
+      anime.timeline({
+        duration: 950,
+        delay: function delay(el, i) {
+          return i * 300;
+        },
+        easing: 'easeInOutQuad'
+      }).add({
+        targets: downSide,
+        translateY: [999, 0],
+        easing: 'spring(1, 40, 10, 0)'
+      }, 100);
+    },
+    mapDots: function mapDots() {
+      var mapElements = document.querySelectorAll('.map-static__object svg circle, .map-static__object svg .map-static__object-anim');
+      var mapElementsCircle = document.querySelectorAll('.map-static__object svg circle');
+
+      function randomValuesOpTran() {
+        anime({
+          targets: mapElementsCircle,
+          translateY: function translateY() {
+            return anime.random(-2, 2);
+          },
+          easing: 'easeInOutQuad',
+          duration: 1200,
+          complete: randomValuesOpTran
+        });
+      }
+
+      anime.timeline({
+        easing: 'easeInOutQuad',
+        duration: 400
+      }).add({
+        targets: mapElements,
+        opacity: [0, 1],
+        fillOpacity: [0, 1],
+        delay: function delay(el, i) {
+          return i * 100;
+        },
+        endDelay: function endDelay(el, i, l) {
+          return (l - i) * 100;
+        }
+      }, 100).add({
+        begin: randomValuesOpTran
+      });
     }
   };
   window.logoPattern = commonAnimation.logoPattern;
   window.iconsPattern = commonAnimation.iconsPattern;
-  logoPattern(); //iconsPattern();
+  window.onlyPattern = commonAnimation.onlyPattern;
+  window.rightSide = commonAnimation.rightSide;
+  window.downSide = commonAnimation.downSide;
+  window.mapDots = commonAnimation.mapDots; //logoPattern();
+
+  downSide();
 
   (function () {
     function Particles() {
@@ -385,11 +693,11 @@ __webpack_require__.r(__webpack_exports__);
       this.minRadius = 10;
       this.maxRadius = 75; //particle opacity min/max
 
-      this.minOpacity = .005;
-      this.maxOpacity = .5; //particle speed min/max
+      this.minOpacity = 0.005;
+      this.maxOpacity = 0.5; //particle speed min/max
 
-      this.minSpeed = .05;
-      this.maxSpeed = .5; //frames per second
+      this.minSpeed = 0.05;
+      this.maxSpeed = 0.5; //frames per second
 
       this.fps = 120; //number of particles
 
@@ -453,8 +761,8 @@ __webpack_require__.r(__webpack_exports__);
       if (self.blurry === true) {
         //creates gradient if blurry === true
         var grd = ctx.createRadialGradient(particle[i].xPos, particle[i].yPos, particle[i].radius, particle[i].xPos, particle[i].yPos, particle[i].radius / 1.25);
-        grd.addColorStop(1.000, particle[i].color);
-        grd.addColorStop(0.000, 'rgba(34, 34, 34, 0)');
+        grd.addColorStop(1.0, particle[i].color);
+        grd.addColorStop(0.0, 'rgba(34, 34, 34, 0)');
         ctx.fillStyle = grd;
       } else {
         //otherwise sets to solid color w/ opacity value
@@ -496,7 +804,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var random = self._rand(0, 1);
 
-      if (random > .5) {
+      if (random > 0.5) {
         // 50% chance particle comes from left side of window...
         particle[i].xPos = -particle[i].radius;
         particle[i].yPos = self._rand(0, canvas.height);

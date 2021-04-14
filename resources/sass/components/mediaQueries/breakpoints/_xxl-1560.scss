@@ -1,4 +1,7 @@
 @media (max-width: 1559.98px) {
+  .content h1 {
+    font-size: 4.45rem;
+  }
   h2 {
     font-size: 5.225rem;
   }
@@ -114,11 +117,11 @@
 
   .list-services {
     li {
-      margin: 24px 0;
+      margin: 15px 0;
 
       a {
-        font-size: 1.3rem;
-        line-height: 1.2;
+        font-size: 1.2rem;
+        line-height: 1.1;
 
         &:hover {
           padding-right: 20px;
@@ -151,5 +154,9 @@
   .footer__search {
     margin-bottom: 10px;
     max-width: 230px;
+  }
+
+  .form-static-standard__group {
+    padding-right: 40px;
   }
 }

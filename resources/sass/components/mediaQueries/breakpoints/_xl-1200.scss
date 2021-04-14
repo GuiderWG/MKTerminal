@@ -1,4 +1,7 @@
 @media (max-width: 1199.98px) {
+  .content h1 {
+    font-size: 4.15rem;
+  }
   .preloader {
     &__title {
       font-size: 78px;
@@ -93,6 +96,20 @@
     }
   }
 
+  .list-services {
+    li {
+      margin: 20px 0;
+      a {
+        font-size: 1.4rem;
+        line-height: 1.3;
+
+        &:hover {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
   .blare-advantage {
     &__front {
       height: 254px;
@@ -137,5 +154,33 @@
         opacity: .8;
       }
     }
+  }
+
+  .form-static-standard__group {
+    padding-right: 15px;
+  }
+  .map__yamap {
+    height: 548px;
+  }
+
+  .necessary-services {
+    padding: 45px 0;
+    background: $blue;
+
+    &__info {
+      padding-right: 0;
+    }
+
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .advantage-s_card .advantage-s__text {
+    font-size: .9rem;
   }
 }

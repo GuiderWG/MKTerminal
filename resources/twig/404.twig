@@ -1,0 +1,32 @@
+{% extends "Layouts/app.twig" %}
+
+{% set title = 'MK Terminal' %}
+{% set app = 'app app_page' %}
+
+{% block body %}
+  
+  {% include "Сomponents/Common/Patterns/BlockPattern.twig" %}
+  {% include "Сomponents/Common/Header/Header.twig" %}
+  {% include "Сomponents/Common/Navigations/NavbarMobile.twig" %}
+  
+  <div class="content">
+    <div class="container">
+      <div class="not-found">
+        <div class="glitch" data-text="404">404</div>
+        <div class="not-found__subtitle">Страница не найдена</div>
+        <div class="not-found__text">
+          Страница, которую вы ищете, не существует. Как вы сюда попали — загадка. Но вы можете нажать кнопку ниже, чтобы вернуться на главную страницу.
+        </div>
+        <div class="not-found__btn">
+          <a href="/" class="btn-default blow">
+            <span></span>
+            <p>На главную</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% include "Сomponents/Common/Footer/Footer.twig" %}
+  {% include "Сomponents/Common/Modals/Modals.twig" %}
+{% endblock %}

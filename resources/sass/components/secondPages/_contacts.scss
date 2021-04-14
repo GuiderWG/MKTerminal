@@ -1,0 +1,62 @@
+.contacts-information {
+  &__item {
+    font-size: 1.1rem;
+    position: relative;
+    font-weight: bold;
+    display: block;
+    padding-left: 30px;
+    text-decoration: none;
+    transition: .3s;
+    color: $white;
+    margin-bottom: 10px;
+    &::before {
+      content: '';
+      position: absolute;
+    }
+    &_adr::before {
+      background: url('../../../../public/images/resources/img/adr.svg') no-repeat;
+      background-size: contain;
+      width: 18px;
+      height: 23px;
+      top: 3px;
+      left: 0;
+    }
+    &_time::before {
+      background: url('../../../../public/images/resources/img/time.svg') no-repeat;
+      background-size: contain;
+      width: 19px;
+      height: 19px;
+      top: 3px;
+      left: 0;
+    }
+    &_phone::before {
+      background: url('../../../../public/images/resources/img/phone.svg') no-repeat;
+      background-size: contain;
+      width: 18px;
+      height: 18px;
+      top: 4px;
+      left: 0;
+    }
+    &_email::before {
+      background: url('../../../../public/images/resources/img/email.svg') no-repeat;
+      background-size: contain;
+      width: 18px;
+      height: 15px;
+      top: 4px;
+      left: 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    transition: .3s;
+    color: $white;
+  }
+  &__link:hover {
+    text-decoration: none;
+  }
+}
+
+.map__yamap {
+  width: 100%;
+  height: 482px;
+}

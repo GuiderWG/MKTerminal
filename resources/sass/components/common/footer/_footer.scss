@@ -11,6 +11,8 @@
   background: $darkBlue;
   @include whiteOpacity(.6);
   letter-spacing: 0.05em;
+  position: relative;
+  flex-shrink: 0;
 
   &__copyright {
     text-transform: uppercase;

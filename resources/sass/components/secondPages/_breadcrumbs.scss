@@ -1,0 +1,27 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  background: transparent;
+  padding: 0;
+  list-style: none;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  &__item {
+    padding-right: 7px;
+  }
+  &__item + &__item::before {
+    display: inline-block;
+    padding-right: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    content: "/";
+  }
+  &__link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: .3s;
+    font-weight: 300;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

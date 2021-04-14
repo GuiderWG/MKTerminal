@@ -127,6 +127,60 @@ export function preloaderAnimation() {
 }
 
 export default document.addEventListener('DOMContentLoaded', () => {
+  /*YANDEX MAP*/
+  (() => {
+    let ymap = document.getElementById('map');
+    if (ymap) {
+      let init = function init(ymaps) {
+        let myMap = new ymaps.Map('map', {
+            center: [59.94870806413625, 30.25951650000001],
+            controls: [],
+            zoom: 17,
+            behaviors: ['default', 'scrollZoom'],
+          }),
+          myPlacemark = new ymaps.Placemark(
+            [59.94870806413625, 30.25951650000001],
+            {
+              hintContent: 'МК Терминал сервис',
+              iconCaption: 'МК Терминал сервис',
+              balloonContent: [
+                // '<img style="width:100px;float:left;margin:20px 20px 20px 0;" alt="" src="../images/logo.png">' +
+                '<address>',
+                '<strong>МК Терминал сервис</strong>',
+                '<br/>',
+                'Адрес: г. Санкт-Петербург, Набережная реки Смоленки, 19-21',
+                '</address>',
+              ].join(''),
+            },
+            {
+              // Опции.
+              // Необходимо указать данный тип макета.
+              iconLayout: 'default#image',
+              // Своё изображение иконки метки.
+              iconImageHref: '/resources/static/images/location-pin.svg',
+              // Размеры метки.
+              iconImageSize: [35, 45],
+              // Смещение левого верхнего угла иконки относительно
+              // её "ножки" (точки привязки).
+              iconImageOffset: [-30, -32],
+            }
+          ),
+          myCollection = new ymaps.GeoObjectCollection();
+        myCollection.add(myPlacemark);
+        let myBalloonLayout = ymaps.templateLayoutFactory.createClass('<p><strong>$[properties.name]</strong></p>' + '<p><strong>Адрес:</strong> $[properties.address]</p>');
+        ymaps.layout.storage.add('my#xpertlayout', myBalloonLayout);
+        myCollection.options.set({
+          balloonContentBodyLayout: 'my#xpertlayout',
+          balloonMaxWidth: 500,
+        });
+        myMap.geoObjects.add(myCollection);
+      };
+
+      ymaps.ready(init);
+    }
+  })();
+  /*--YANDEX MAP*/
+
   /*Поиск в шапке*/
   (() => {
     let showSearchBtn = document.querySelector('.header__search-btn');
@@ -185,6 +239,38 @@ export default document.addEventListener('DOMContentLoaded', () => {
     searchFormClose.addEventListener('click', hideSearchAnimation);
   })();
   /*--Поиск в шапке*/
+
+  (() => {
+    const container = document.querySelector('.block-pattern');
+    if (container) {
+      for (let i = 0; i <= 50; i++) {
+        const blocks = document.createElement('div');
+        blocks.classList.add('block-pattern__element');
+        container.appendChild(blocks);
+      }
+
+      function animateBlocks() {
+        anime({
+          targets: '.block-pattern__element',
+          opacity: 1,
+          translateX: function () {
+            return anime.random(-1980, 1980);
+          },
+          translateY: function () {
+            return anime.random(-500, 500);
+          },
+          scale: function () {
+            return anime.random(1, 5);
+          },
+          easing: 'linear',
+          duration: 3000,
+          delay: anime.stagger(10),
+          complete: animateBlocks,
+        });
+      }
+      animateBlocks();
+    }
+  })();
 
   /*Отрисовка SVG иконок*/
   (() => {

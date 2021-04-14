@@ -6,6 +6,9 @@
       }
     }
   }
+  .content h1 {
+    font-size: 2rem;
+  }
   h2 {
     font-size: 2.5rem;
   }
@@ -123,4 +126,136 @@
   .form-static-bg {
     padding: 35px 25px 35px 25px;
   }
+
+  .glitch {
+    font-size: 130px;
+    margin-bottom: 0;
+  }
+
+  .not-found__subtitle {
+    font-size: 2.5rem;
+    line-height: normal;
+  }
+
+  .not-found__text {
+    font-size: 1rem;
+  }
+
+  .content {
+    margin-bottom: 20px;
+    padding-top: 100px;
+  }
+
+  .form-static-standard {
+    padding: 40px 0 0 0;
+
+    &__title {
+      font-size: 1.6rem;
+    }
+
+    &__group {
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    &__map {
+      margin: 40px -15px 0;
+    }
+
+  }
+
+  .map__yamap {
+    height: 348px;
+  }
+
+  .s-category {
+    padding: 30px;
+
+    &_mini {
+      padding: 15px 20px;
+      .s-category__icon {
+        max-width: 32px;
+      }
+    }
+
+    &__icon {
+      margin-right: 15px;
+    }
+
+    &__link {
+      font-size: 1rem;
+    }
+  }
+
+  .content__services {
+    margin-top: 30px;
+
+    &_cat {
+      margin-bottom: 20px;
+    }
+  }
+
+  .advantages-s {
+    padding: 35px 0 15px;
+
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+    }
+
+    &__icon {
+      margin-bottom: 10px;
+    }
+
+    &__item {
+      margin-bottom: 30px;
+    }
+  }
+
+  .advantage-s {
+    &__icon {
+      margin-bottom: 10px;
+    }
+
+    &_card {
+      height: auto;
+    }
+  }
+
+  .necessary-services {
+    padding: 30px 0;
+    background: $blue;
+
+    &__info {
+      padding-right: 0;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__subtitle {
+      font-size: .9rem;
+    }
+  }
+
+  .plan {
+    padding: 20px 0 10px;
+
+    &__item {
+      margin-bottom: 20px;
+    }
+
+    &-card {
+      &__number {
+        font-size: 3.5rem;
+        line-height: normal;
+      }
+    }
+  }
+
+  .otb-card__title {
+    font-size: 1.4rem;
+  }
+
 }

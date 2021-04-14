@@ -10,15 +10,15 @@ import 'bootstrap';
 import 'slick-carousel';
 
 /* Animation with JS */
-import gsap from "gsap";
-window.gsap = gsap;
+/*import gsap from "gsap";
+window.gsap = gsap;*/
 
 /* Parallax JS */
-import Parallax from 'parallax-js'
-window.Parallax = Parallax;
+/*import Parallax from 'parallax-js'
+window.Parallax = Parallax;*/
 
 /* AnimeJS */
-import anime from 'animejs/lib/anime.es.js'
+import anime from 'animejs/lib/anime.es.js';
 window.anime = anime;
 
 // Fancybox 3

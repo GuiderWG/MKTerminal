@@ -1,0 +1,60 @@
+.advantages-s {
+  padding: 75px 0 55px;
+  &_bg {
+    background: url('../../../../public/images/resources/img/advan-bg.png') no-repeat;
+    background-size: cover;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 3.2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 90px;
+    @include whiteOpacity(.8);
+  }
+
+  &__item {
+    margin-bottom: 25px;
+  }
+}
+
+.advantage-s {
+  text-align: center;
+  &__icon {
+    margin-bottom: 25px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__img {
+    max-height: 100%;
+  }
+  &__text {
+    @include whiteOpacity(.7)
+  }
+
+  &_card {
+    height: 244px;
+    position: relative;
+    z-index: 2;
+    padding: 35px;
+    background: $darkBlue;
+    box-shadow: 0 12px 50px rgba(1, 30, 45, 0.6);
+    border-radius: 15px;
+
+    .advantage-s__icon {
+      height: 85px;
+    }
+
+    .advantage-s__text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      @include whiteOpacity(1);
+    }
+  }
+}

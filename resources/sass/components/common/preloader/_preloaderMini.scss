@@ -1,0 +1,42 @@
+.preloader-await {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  &__load {
+    display: flex;
+    position: relative;
+    animation: rotateLoad infinite linear 1s;
+    width: 60px;
+    height: 60px;
+    &_mini {
+      width: 15px;
+      height: 15px;
+    }
+    &_little {
+      width: 15px;
+      height: 15px;
+    }
+    &:before,
+    &:after {
+      display: flex;
+      position: absolute;
+      content: '';
+      background: $primary;
+      border-radius: 50%;
+      width: 55%;
+      height: 55%;
+    }
+    &:before { right: 0; bottom: 0; animation: scaleChange_1 infinite linear 1s; }
+    &:after { top: 0; left: 0; animation: scaleChange_2 infinite linear 1s; }
+    &_dark:before,
+    &_dark:after { background: $black; }
+    &_mini:after { border-width: 2px; }
+    &_little:after { border-width: 3px; }
+    &:after { border-width: 8px; }
+  }
+}

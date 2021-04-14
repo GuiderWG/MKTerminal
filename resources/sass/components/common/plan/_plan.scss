@@ -1,0 +1,25 @@
+.plan {
+  padding: 55px 0 30px;
+  &_sm_padding {
+    padding: 20px 0;
+  }
+  &-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+
+    &__number {
+      font-weight: 800;
+      font-size: 5.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-right: 15px;
+    }
+
+    &__text {
+      @include whiteOpacity(.6)
+    }
+  }
+}

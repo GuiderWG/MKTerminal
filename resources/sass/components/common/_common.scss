@@ -1,3 +1,5 @@
+@import "diafan/diafan";
+
 * {
   outline: none;
   font-feature-settings: 'pnum' on, 'lnum' on;
@@ -5,6 +7,39 @@
 
 body {
   overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  transition: .3s;
+}
+
+::-webkit-scrollbar-track {
+  background: $darkBlue;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
+}
+
+::-moz-selection{
+  background-color:$primary;
+  color:$white;
+}
+::selection{
+  background-color:$primary;
+  color:$white;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .section {
@@ -23,13 +58,40 @@ body {
   letter-spacing: .02em;
 }
 
-.pattern-full {
-  position: fixed;
-  top: 0;
-  left: 0;
+.title-default {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .05em;
 }
 
+.subtitle-default {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .05em;
+  font-size: 28px;
+  &_op_6 {
+    opacity: .8;
+  }
+}
+
+.text-primary {
+  color: $primary;
+
+}
+
+.text-active {
+  color: $white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.js_shop_list {
+  margin-top: 40px;
+}
+
+
 @import "preloader/preloader";
+@import "preloader/preloaderMini";
 @import "header/header";
 @import "navigations/navbarMain";
 @import "navigations/navbarMobile";
@@ -44,10 +106,15 @@ body {
 @import "search/search";
 @import "sliders/mainSlider";
 @import "patterns/gitPattern";
+@import "patterns/fullPattern";
 @import "patterns/bigPattern";
+@import "patterns/blockPattern";
+@import "patterns/glitchPattern";
 @import "advantages/blareAdvantage";
 @import "services/services";
 @import "masks/masks";
 @import "cards/project";
+@import "cards/otb";
 @import "footer/footer";
 @import "social/social";
+@import "plan/plan";

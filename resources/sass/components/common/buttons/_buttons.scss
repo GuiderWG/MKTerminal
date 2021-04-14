@@ -35,7 +35,7 @@
     color: $darkBlue;
   }
 
-  & span {
+  & > span {
     border-radius: 100%;
     position: absolute;
     display: block;
@@ -48,7 +48,7 @@
     transition: width .6s, padding-top .6s;
   }
 
-  &:hover span {
+  &:hover > span {
     width: 250%;
     padding-top: 250%;
   }
